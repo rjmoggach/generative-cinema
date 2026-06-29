@@ -72,6 +72,9 @@ Shot terminology (BCU/CU/MS/LS, angles, movement): [`references/reference-film-g
 - Focal length, DOF, lensing by emotion/genre: [`references/guide-lens-language.md`](references/guide-lens-language.md)
 - Spatial continuity (180/30/eyeline/screen direction): [`references/guide-continuity-rules.md`](references/guide-continuity-rules.md)
 - Building a whole scene (coverage modes, A/I/L staging, intensity arc): [`references/guide-sequence-construction.md`](references/guide-sequence-construction.md)
+- Visual intensity (contrast/affinity, the 7 components): [`references/guide-visual-structure.md`](references/guide-visual-structure.md)
+- Color schemes + associative color: [`references/guide-color-story.md`](references/guide-color-story.md)
+- Authorial intent (motivated camera, POV, subtext, rule-breaking): [`references/guide-creative-approaches.md`](references/guide-creative-approaches.md)
 
 For a full sequence, run the scene-build workflow in `guide-sequence-construction.md` and lock screen direction + eyelines per `guide-continuity-rules.md` *before* generating, so the shots cut together as one space.
 
