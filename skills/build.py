@@ -42,6 +42,7 @@ MANIFEST = {
         ("guide-visual-structure.md", "references/guide-visual-structure.md"),
         ("guide-color-story.md", "references/guide-color-story.md"),
         ("guide-creative-approaches.md", "references/guide-creative-approaches.md"),
+        ("guide-ai-generation-strategy.md", "references/guide-ai-generation-strategy.md"),
         ("model-currency-2026-06.md", "references/model-currency-2026-06.md"),
         ("model-image-flux-pro.md", "references/models/model-image-flux-pro.md"),
         ("model-image-gemini-flash.md", "references/models/model-image-gemini-flash.md"),
@@ -53,9 +54,17 @@ MANIFEST = {
         ("model-video-luma-ray3.md", "references/models/model-video-luma-ray3.md"),
         ("model-editing-flux-kontext.md", "references/models/model-editing-flux-kontext.md"),
     ],
+    "sequence-design": [
+        ("guide-sequence-construction.md", "references/guide-sequence-construction.md"),
+        ("guide-continuity-rules.md", "references/guide-continuity-rules.md"),
+        ("guide-visual-structure.md", "references/guide-visual-structure.md"),
+        ("guide-shot-selection.md", "references/guide-shot-selection.md"),
+        ("guide-lens-language.md", "references/guide-lens-language.md"),
+    ],
     "model-docs": [
         ("model-currency-2026-06.md", "references/model-currency-2026-06.md"),
         ("model-image-flux-pro.md", "references/example-model-doc.md"),
+        ("guide-ai-generation-strategy.md", "references/guide-ai-generation-strategy.md"),
     ],
 }
 

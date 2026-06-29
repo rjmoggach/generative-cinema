@@ -75,6 +75,7 @@ Shot terminology (BCU/CU/MS/LS, angles, movement): [`references/reference-film-g
 - Visual intensity (contrast/affinity, the 7 components): [`references/guide-visual-structure.md`](references/guide-visual-structure.md)
 - Color schemes + associative color: [`references/guide-color-story.md`](references/guide-color-story.md)
 - Authorial intent (motivated camera, POV, subtext, rule-breaking): [`references/guide-creative-approaches.md`](references/guide-creative-approaches.md)
+- Making it survive real model limits (continuity, drift, iteration): [`references/guide-ai-generation-strategy.md`](references/guide-ai-generation-strategy.md)
 
 For a full sequence, run the scene-build workflow in `guide-sequence-construction.md` and lock screen direction + eyelines per `guide-continuity-rules.md` *before* generating, so the shots cut together as one space.
 
