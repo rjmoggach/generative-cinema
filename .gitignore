@@ -34,3 +34,7 @@ temp/
 # Review documents (internal use)
 COMPREHENSIVE-REVIEW.md
 *-REVIEW.md
+
+# Skill build artifacts
+skills/dist/
+*.skill
