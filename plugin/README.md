@@ -77,10 +77,10 @@ self-contained plugin — nothing needs building to install.
 **Claude Code (from this repo as a marketplace):**
 
 ```
-/plugin marketplace add rjmoggach/generative-context
-/plugin install generative-cinema@generative-context
+/plugin marketplace add rjmoggach/generative-cinema
+/plugin install generative-cinema@generative-cinema
 ```
 
-Or from a local clone: `/plugin marketplace add ./generative-context` then the same
+Or from a local clone: `/plugin marketplace add ./generative-cinema` then the same
 install. Skills are namespaced (e.g., `generative-cinema:shot-prompt`); the crew
 agents become available to the main agent.

@@ -28,7 +28,7 @@ Add a manifest at the repo root and let the repository itself be the plugin, so
 `context/` stays the single source of truth with no copying.
 
 ```
-generative-context/                      (= plugin root, ${CLAUDE_PLUGIN_ROOT})
+generative-cinema/                      (= plugin root, ${CLAUDE_PLUGIN_ROOT})
 ├── .claude-plugin/
 │   └── plugin.json                       # manifest (name, version, author)
 ├── context/                              # THE library — one copy, unchanged
