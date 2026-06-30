@@ -38,3 +38,8 @@ COMPREHENSIVE-REVIEW.md
 # Skill build artifacts
 skills/dist/
 *.skill
+
+# Assembled plugin (regenerate with: python plugin/assemble.py)
+plugin/context/
+plugin/skills/
+*.plugin
