@@ -40,7 +40,7 @@ Heuristic-format guides (Decision / Use when / Because / Prompt translation / Wa
 - `guide-shot-selection.md`, `guide-lens-language.md`, `guide-continuity-rules.md`, `guide-sequence-construction.md` (P0).
 - `guide-visual-structure.md`, `guide-color-story.md`, `guide-creative-approaches.md` (P1).
 - `guide-ai-generation-strategy.md` (P2 - craft under current model limits).
-- See `CRAFT-EXPANSION-PROPOSAL.md` for the roadmap.
+- See `docs/history/CRAFT-EXPANSION-PROPOSAL.md` for the original roadmap.
 
 ### Agent skills (`skills/`)
 
