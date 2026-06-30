@@ -40,6 +40,4 @@ skills/dist/
 *.skill
 
 # Assembled plugin (regenerate with: python plugin/assemble.py)
-plugin/context/
-plugin/skills/
 *.plugin

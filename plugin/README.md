@@ -48,6 +48,22 @@ authored directly under `plugin/`.
 
 ## Install
 
-Install the produced `generative-cinema.plugin` from the Cowork plugins UI. Once
-installed, the four skills auto-trigger on creative/library phrasing and the three
-agents are available for review and research.
+**Cowork (one click):** open the `generative-cinema.plugin` file in chat and press
+the install button on its card.
+
+**Claude Code (from this repo / marketplace):** the repo root carries a
+`.claude-plugin/marketplace.json`, so the whole repo is an installable marketplace.
+
+```
+/plugin marketplace add rjmoggach/generative-context
+/plugin install generative-cinema@generative-context
+```
+
+Or from a local clone: `/plugin marketplace add ./generative-context` then the same
+install. Skills are namespaced (e.g., `generative-cinema:shot-prompt`); the three
+agents become available to the main agent.
+
+The committed `plugin/` directory is the complete, self-contained plugin (manifest,
+skills, agents, and the shared `context/` library) — nothing needs building to
+install. `plugin/assemble.py` only *regenerates* it after you edit the repo-root
+`context/` or `skills/` sources; commit the refreshed `plugin/` afterward.
