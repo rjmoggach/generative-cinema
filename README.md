@@ -1,133 +1,154 @@
-# Generative AI Context Library
+# generative-cinema
 
-**Version**: 0.2.0
-**Updated**: 2026-06-29
+**Version**: 0.4.0 · **Updated**: 2026-06-29
 
-A model-agnostic library of context for effective image and video prompting —
-film-grammar references, decision-support craft guides, per-model docs, and a set
-of installable agent skills that turn it all into a working pipeline.
+A flexible plugin for getting **cinematic, model-optimized prompts** for generative
+image and video — at any level of structure. Ask for a great one-off still prompt,
+the next shot from a still, a scene's coverage, a shot within a sequence, or the
+full project → sequence → shot chain. It pairs a production *workflow* (skills) with
+a *crew* you talk to (agents), backed by a film-grammar + craft + model reference
+library.
 
----
+You are the **Creative Director**: you set the brief and approve. The crew does the work.
 
-## What's inside
-
-```
-context/      Knowledge the system reasons over (model docs, film grammar,
-              craft guides, currency snapshot, visual references)
-skills/       Agent skills (self-contained, installable) + build script
-docs/         Setup and workflow guides
-prompts/      Custom GPT system prompts + templates (legacy ChatGPT path)
-knowledge-base/  Primary-source film texts (Arijon, Mascelli, etc.)
-```
+This repository is also a **Claude Code plugin marketplace** — the installable
+plugin lives in [`plugin/`](plugin/), and the editable source it's built from lives
+at the repo root (`context/`, `skills/`).
 
 ---
 
-## The skills pipeline (recommended)
+## Install
 
-Four self-contained skills under `skills/` (see `skills/README.md`). Build/refresh
-installable `.skill` packages with `python skills/build.py`.
+**Cowork:** open the `generative-cinema.plugin` file (built by `python plugin/assemble.py --package`) in chat and press install.
+
+**Claude Code:**
 
 ```
-project-context  ->  sequence-design  ->  shot-prompt  ->  prompts
-   (the look)         (the scene plan)     (each shot)
-        model-docs keeps the model docs current for all of them
+/plugin marketplace add rjmoggach/generative-cinema
+/plugin install generative-cinema@generative-cinema
 ```
+
+Or from a local clone: `/plugin marketplace add ./generative-cinema` then the same install.
+
+---
+
+## Flexible entry — work at whatever level you have
+
+| You want… | Ask | Who handles it |
+|---|---|---|
+| A great one-off still prompt | "great prompt for X" | `cinematographer` (or `shot-prompt`) |
+| A shot from a still | "next shot from this still" | `cinematographer` |
+| A scene's coverage / shot list | "break down this scene" | `first-ad` (or `sequence-design`) |
+| A shot within a sequence | "give me the next shot" | `cinematographer` |
+| A whole project's look first | "define the look" | `project-context` |
+| The full chain | start at project, flow down | the crew, in order |
+
+No project context is required for a one-off — only load a show bible when you want
+every output locked to the same look.
+
+---
+
+## The crew
+
+Skills are the production workflow; agents are the crew you talk to, applying the
+skills' craft with a role's judgment.
+
+### Skills (the workflow)
 
 | Skill | Level | Does |
 |---|---|---|
-| `project-context` | Project | Guided visual-DNA interview -> `project-context-<show-code>.md` |
-| `sequence-design` | Scene | Plan coverage, staging, screen direction, intensity arc -> shot list |
+| `project-context` | Project | Visual-DNA interview → `project-context-{show-code}.md` |
+| `sequence-design` | Scene | Plan coverage, staging, screen direction, intensity arc → shot list |
 | `shot-prompt` | Shot | Six-layer, model-optimized prompts honoring the project look |
 | `model-docs` | Library | Research + write/refresh a model doc; sync currency |
+
+### Agents (the crew)
+
+| Agent | Role | You ask for |
+|---|---|---|
+| `director` | Director | Intent, approach, coverage calls, notes (you brief it as Creative Director) |
+| `cinematographer` | DP | "Give me the next shot" / "a great prompt for this still" — a finished prompt |
+| `first-ad` | 1st AD | "Break down this scene" — an ordered coverage shot list |
+| `script-supervisor` | Continuity | "Does this cut together?" — screen direction, eyelines, the line, look consistency |
+| `researcher` | Research | "Research model X" — isolated web research feeding `model-docs` |
+
+Typical flow: brief the **Director** → **1st AD** breaks down coverage → the **DP**
+hands back each shot's prompt → the **Script Supervisor** checks it cuts together.
+Or skip straight to the **DP** for a single shot or one-off still.
 
 ---
 
 ## Models (12)
 
-Always check `context/model-currency-2026-06.md` for the current version before
-quoting specs — this space moves monthly.
+Check `context/model-currency-2026-06.md` for the current version before quoting
+specs — this space moves monthly.
 
-### Image (4)
-
-- **FLUX.2** (Pro/Flex/Dev/Klein) - fast, high-res, strong typography + reference.
-- **Nano Banana 2 / Pro** (Gemini 3.1 / 3 Image) - conversational editing, text rendering.
-- **Midjourney v8.1** - artistic/stylized, native HD 2K, Omni Reference.
-- **Seedream 5** - ultra high-res (4K), reasons + web-searches before generating.
-
-### Video (7)
-
-- **Seedance 2.5** - cinematic multi-shot; up to 30s single-pass.
-- **Runway Gen-4.5** - fast iteration, strong character lock, best production UI.
-- **Veo 3.1** - native audio + JSON prompting.
-- **Luma Ray3.2** - 16-bit HDR/EXR, frame-level keyframes for VFX.
-- **Kling 3.0** - native 4K, most fluid motion, Motion Control/Brush.
-- **Sora 2 / 2 Pro** - multi-shot storytelling, physics, native dialogue (API sunset Sep 24 2026).
-- **Wan 2.6** - open-weights, native audio/lip-sync, self-hostable.
-
-### Editing (1)
-
-- **FLUX.1 Kontext** (and FLUX.2 unified editing) - iterative editing, consistency.
-
----
-
-## Cinematic craft guides
-
-Decision-support guides in `context/` (format: Decision / Use when / Because /
-Prompt translation / Watch-outs / Anchors). They turn the taxonomy into judgment:
-
-- `guide-shot-selection`, `guide-lens-language`, `guide-continuity-rules`, `guide-sequence-construction`
-- `guide-visual-structure` (contrast/affinity), `guide-color-story`, `guide-creative-approaches`
-- `guide-ai-generation-strategy` (craft under current model limits)
-
-Plus the foundations: `guide-prompting-framework.md` (six-layer framework),
-`reference-film-grammar.md`, `reference-film-movements.md`, and the
-`reference-visual-*` style anchors (directors, cinematographers, commercial
-directors, photographers).
-
----
-
-## Model selection (quick guide)
+**Image (4):** FLUX.2 · Nano Banana 2 / Pro (Gemini 3.1 / 3 Image) · Midjourney v8.1 · Seedream 5.
+**Video (7):** Seedance 2.5 · Runway Gen-4.5 · Veo 3.1 · Luma Ray3.2 · Kling 3.0 · Sora 2 / 2 Pro (API sunset Sep 24 2026) · Wan 2.6.
+**Editing (1):** FLUX.1 Kontext (and FLUX.2 unified editing).
 
 | Need | Reach for | Alternative |
 |---|---|---|
 | Max resolution still | Seedream 5 | FLUX.2 |
 | Fast, clean high-res still | FLUX.2 | Seedream 5 |
-| Artistic/stylized still | Midjourney v8.1 | FLUX.2 |
+| Artistic / stylized still | Midjourney v8.1 | FLUX.2 |
 | Text in image / conversational edit | Nano Banana 2 | FLUX.1 Kontext |
 | Native 4K video / fluid motion | Kling 3.0 | Luma Ray3.2 |
 | Multi-shot storytelling | Sora 2 | Seedance 2.5 |
-| Video with audio/dialogue | Veo 3.1 | Wan 2.6 / Sora 2 |
+| Video with audio / dialogue | Veo 3.1 | Wan 2.6 / Sora 2 |
 | Fast char-consistent coverage | Runway Gen-4.5 | Kling 3.0 |
-| HDR / VFX elements | Luma Ray3.2 | - |
-| Open-source / local / private | Wan 2.6 | - |
+| HDR / VFX elements | Luma Ray3.2 | — |
+| Open-source / local / private | Wan 2.6 | — |
 | Image editing | FLUX.1 Kontext | Nano Banana 2 |
 
 ---
 
-## Universal prompting principles
+## Craft guides
 
-1. **Front-load style**: `"Cinematic photo of..."` (not `"...cinematic style"`).
-2. **Be specific**: `"1967 red Mustang convertible"` (not `"nice car"`).
-3. **Positive phrasing**: describe what you want, not what you don't.
-4. **Layer information**: Style -> Subject -> Technical -> Context.
-5. **Iterate**: start simple, change one element at a time.
-
-See `context/guide-prompting-general.md` and `context/guide-prompting-framework.md`.
+Decision-support guides in `context/` (format: Decision / Use when / Because /
+Prompt translation / Watch-outs / Anchors) that turn the taxonomy into judgment:
+`guide-shot-selection`, `guide-lens-language`, `guide-continuity-rules`,
+`guide-sequence-construction`, `guide-visual-structure` (contrast/affinity),
+`guide-color-story`, `guide-creative-approaches`, `guide-ai-generation-strategy`.
+Foundations: `guide-prompting-framework` (the six-layer framework),
+`reference-film-grammar`, `reference-film-movements`, and the `reference-visual-*`
+style anchors (directors, cinematographers, commercial directors, photographers).
 
 ---
 
-## Legacy: Custom GPT deployment
+## Repository layout
 
-The `prompts/system-prompt-*.md` files remain valid for ChatGPT Custom GPT
-setups; `docs/01-setup-custom-gpt.md` covers deployment. The `skills/` are the
-agent-native equivalent and are preferred for Claude / Cowork.
+```
+.claude-plugin/marketplace.json   This repo as a Claude Code marketplace → ./plugin
+plugin/                           The installable generative-cinema plugin (assembled)
+  ├── .claude-plugin/plugin.json
+  ├── skills/   (4)   agents/ (5)   context/ (the bundled library)
+  └── assemble.py                  Builds plugin/ from the repo-root sources
+context/                          Source of truth: model docs, craft guides, references
+skills/                           Source skill definitions (with bundled references/)
+docs/                             Setup + workflow guides
+prompts/                          Legacy Custom GPT system prompts + templates
+knowledge-base/                   Primary-source film texts (Arijon, Mascelli, …)
+```
+
+`context/` and `skills/` are the editable source of truth. `python plugin/assemble.py`
+regenerates `plugin/context/` and `plugin/skills/` with paths repointed to
+`${CLAUDE_PLUGIN_ROOT}`; the committed `plugin/` is the complete, self-contained
+plugin. Use `--package` to also build the clickable `.plugin`.
 
 ---
 
 ## Maintenance
 
-- **Refresh model facts**: `model-docs` skill; update `context/model-currency-2026-06.md`.
-- **Add craft content**: follow the heuristic format; wire into `skills/build.py` MANIFEST; rebuild.
-- **Rebuild skill packages**: `python skills/build.py`.
-- **Log changes**: `CHANGELOG.md`.
-- **File naming**: `model-<type>-<name>.md`, `guide-*.md`, `reference-*.md` (kebab-case).
+- **Refresh model facts:** `model-docs` skill (or the `researcher` agent); update `context/model-currency-2026-06.md`.
+- **Add craft content:** write in the heuristic format under `context/`, wire into `skills/build.py` + `plugin/assemble.py`, rebuild.
+- **Rebuild the plugin:** `python plugin/assemble.py` (add `--package` for the `.plugin`).
+- **Log changes:** `CHANGELOG.md`.
+
+---
+
+## Legacy: Custom GPT deployment
+
+The `prompts/system-prompt-*.md` files remain valid for ChatGPT Custom GPT setups
+(`docs/01-setup-custom-gpt.md`). The plugin is the agent-native equivalent and is
+preferred for Claude / Cowork.
