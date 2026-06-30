@@ -4,10 +4,10 @@
 
 A flexible plugin for getting **cinematic, model-optimized prompts** for generative
 image and video — at any level of structure. Ask for a great one-off still prompt,
-the next shot from a still, a scene's coverage, a shot within a sequence, or the
-full project → sequence → shot chain. It pairs a production *workflow* (skills) with
-a *crew* you talk to (agents), backed by a film-grammar + craft + model reference
-library.
+the next shot from a still, a scene's coverage, a shot within a sequence, an edit to
+a still or clip you already have, or the full project → sequence → shot chain. It
+pairs a production *workflow* (skills) with a *crew* you talk to (agents), backed by a
+film-grammar + craft + model reference library.
 
 You are the **Creative Producer**: you set the brief and approve. The crew does the work.
 
@@ -114,6 +114,9 @@ Prompt translation / Watch-outs / Anchors) that turn the taxonomy into judgment:
 `guide-shot-selection`, `guide-lens-language`, `guide-continuity-rules`,
 `guide-sequence-construction`, `guide-visual-structure` (contrast/affinity),
 `guide-color-story`, `guide-creative-approaches`, `guide-ai-generation-strategy`.
+Editing / asset workflow: `guide-footage-transformation` (video-to-video),
+`guide-image-editing` (image-to-image), and `guide-asset-reference` (building reusable
+character/prop/location anchors — the spine of the v0.6+ art department).
 Foundations: `guide-prompting-framework` (the six-layer framework),
 `reference-film-grammar`, `reference-film-movements`, and the `reference-visual-*`
 style anchors (directors, cinematographers, commercial directors, photographers).
