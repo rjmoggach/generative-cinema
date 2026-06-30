@@ -1,7 +1,7 @@
 {
   "name": "generative-cinema",
-  "version": "0.3.0",
-  "description": "A cinematic context system for generative image/video: define a project's visual language, plan coverage, write model-optimized shot prompts, and keep the model library current — backed by film-grammar and craft references and a review crew (script supervisor, director, researcher).",
+  "version": "0.4.0",
+  "description": "A cinematic context system for generative image/video: define a project's visual language, plan coverage, write model-optimized shot prompts, and keep the model library current \u2014 backed by film-grammar and craft references and a review crew (script supervisor, director, researcher).",
   "author": {
     "name": "Robert Moggach",
     "email": "rjmoggach@gmail.com"
@@ -9,5 +9,12 @@
   "homepage": "https://github.com/rjmoggach/generative-context",
   "repository": "https://github.com/rjmoggach/generative-context",
   "license": "MIT",
-  "keywords": ["generative-ai", "cinematography", "prompting", "film-grammar", "video", "image"]
+  "keywords": [
+    "generative-ai",
+    "cinematography",
+    "prompting",
+    "film-grammar",
+    "video",
+    "image"
+  ]
 }
