@@ -9,7 +9,7 @@ full project → sequence → shot chain. It pairs a production *workflow* (skil
 a *crew* you talk to (agents), backed by a film-grammar + craft + model reference
 library.
 
-You are the **Creative Director**: you set the brief and approve. The crew does the work.
+You are the **Creative Producer**: you set the brief and approve. The crew does the work.
 
 This repository is also a **Claude Code plugin marketplace** — the installable
 plugin lives in [`plugin/`](plugin/), and the editable source it's built from lives
@@ -19,7 +19,7 @@ at the repo root (`context/`, `skills/`).
 
 ## Install
 
-**Cowork:** open the `generative-cinema.plugin` file (built by `python plugin/assemble.py --package`) in chat and press install.
+**Cowork:** download the prebuilt [`generative-cinema.plugin`](generative-cinema.plugin) from the repo root, open it in chat, and press install.
 
 **Claude Code:**
 
@@ -66,7 +66,7 @@ skills' craft with a role's judgment.
 
 | Agent | Role | You ask for |
 |---|---|---|
-| `director` | Director | Intent, approach, coverage calls, notes (you brief it as Creative Director) |
+| `director` | Director | Intent, approach, coverage calls, notes (you brief it as Creative Producer) |
 | `cinematographer` | DP | "Give me the next shot" / "a great prompt for this still" — a finished prompt |
 | `first-ad` | 1st AD | "Break down this scene" — an ordered coverage shot list |
 | `script-supervisor` | Continuity | "Does this cut together?" — screen direction, eyelines, the line, look consistency |
@@ -142,7 +142,7 @@ plugin. Use `--package` to also build the clickable `.plugin`.
 
 - **Refresh model facts:** `model-docs` skill (or the `researcher` agent); update `context/model-currency-2026-06.md`.
 - **Add craft content:** write in the heuristic format under `context/`, wire into `skills/build.py` + `plugin/assemble.py`, rebuild.
-- **Rebuild the plugin:** `python plugin/assemble.py` (add `--package` for the `.plugin`).
+- **Rebuild the plugin:** `python plugin/assemble.py` (add `--package` to rebuild the committed root `generative-cinema.plugin` — commit it so the Cowork download stays current).
 - **Log changes:** `CHANGELOG.md`.
 
 ---

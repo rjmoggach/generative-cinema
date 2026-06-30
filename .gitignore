@@ -39,5 +39,7 @@ COMPREHENSIVE-REVIEW.md
 skills/dist/
 *.skill
 
-# Assembled plugin (regenerate with: python plugin/assemble.py)
+# Assembled plugin (regenerate with: python plugin/assemble.py --package)
+# The repo-root generative-cinema.plugin ships prebuilt so users don't have to build it.
 *.plugin
+!/generative-cinema.plugin

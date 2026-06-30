@@ -2,6 +2,15 @@
 
 All notable changes to the Generative AI Context Library will be documented in this file.
 
+## v0.4.1 - 2026-06-30
+
+### Distribution fix
+
+- Ship a prebuilt `generative-cinema.plugin` at the repo root so Cowork users can install without building it.
+- `plugin/assemble.py --package` now writes the artifact to the repo root (was a hardcoded session path).
+- Un-ignored the committed root `generative-cinema.plugin` in `.gitignore`.
+- README Cowork install now links the prebuilt file; maintenance note covers rebuilding/committing it on release.
+
 ## v0.2 - 2026-06-29
 
 ### Model currency refresh (June 2026)

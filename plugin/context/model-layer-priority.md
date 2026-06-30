@@ -48,4 +48,18 @@ matching `../../context/model-*.md` for full parameters.
 
 ### Sora 2 / 2 Pro — `model-video-sora-2.md`
 - Emphasize Layers 1, 2, 6 — **multi-shot storytelling** in one prompt; strong physics.
-- Native dialogue; describe shot order + spatial continuity. (A
+- Native dialogue; describe shot order + spatial continuity. (API sunsets Sep 24 2026.)
+
+### Wan 2.6 — `model-video-wan-2-6.md`
+- Use all 6 layers; **open-source**, native audio/lip-sync. Best for local/cost-sensitive dialogue.
+- Specify line, emphasis, and gesture for lip-sync quality.
+
+## Editing
+
+### FLUX.1 Kontext / FLUX.2 editing — `model-editing-flux-kontext.md`
+- Describe the change while explicitly preserving identity/features.
+- For new work also consider FLUX.2 unified editing and Nano Banana 2.
+
+## Adding more models
+Use the `model-docs` skill and update `model-currency-2026-06.md`. All models the
+framework references are now documented.
