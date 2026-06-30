@@ -107,17 +107,15 @@ def validate():
 
 
 def package():
-    tmp = Path("/tmp/generative-cinema.plugin")
-    if tmp.exists():
-        tmp.unlink()
-    with zipfile.ZipFile(tmp, "w", zipfile.ZIP_DEFLATED) as z:
+    dest = REPO / "generative-cinema.plugin"
+    if dest.exists():
+        dest.unlink()
+    with zipfile.ZipFile(dest, "w", zipfile.ZIP_DEFLATED) as z:
         for p in sorted(PLUGIN.rglob("*")):
             if p.is_file() and p.name != "assemble.py" and not p.name.endswith(".plugin"):
                 if any(part.startswith(".fuse_hidden") for part in p.parts):
                     continue
                 z.write(p, p.relative_to(PLUGIN))
-    dest = Path("/sessions/confident-funny-curie/mnt/outputs") / "generative-cinema.plugin"
-    shutil.copyfile(tmp, dest)
     print("packaged: %s (%d bytes)" % (dest, dest.stat().st_size))
 
 
