@@ -19,7 +19,7 @@ at the repo root (`context/`, `skills/`).
 
 ## Install
 
-**Cowork:** download the prebuilt [`generative-cinema.plugin`](generative-cinema.plugin) from the repo root, open it in chat, and press install.
+**Cowork:** download the latest [`generative-cinema.plugin`](https://github.com/rjmoggach/generative-cinema/releases/latest/download/generative-cinema.plugin) from [Releases](https://github.com/rjmoggach/generative-cinema/releases/latest), open it in chat, and press install.
 
 **Claude Code:**
 
@@ -144,7 +144,7 @@ plugin. Use `--package` to also build the clickable `.plugin`.
 
 - **Refresh model facts:** `model-docs` skill (or the `researcher` agent); update `context/model-currency-2026-06.md`.
 - **Add craft content:** write in the heuristic format under `context/`, wire into `skills/build.py` + `plugin/assemble.py`, rebuild.
-- **Rebuild the plugin:** `python plugin/assemble.py` (add `--package` to rebuild the committed root `generative-cinema.plugin` — commit it so the Cowork download stays current).
+- **Rebuild the plugin:** `python plugin/assemble.py` (add `--package` to build `generative-cinema.plugin`). The `.plugin` is **not** committed — attach it to a GitHub Release on each version bump (`gh release create vX.Y.Z generative-cinema.plugin`) so the Cowork download link stays current.
 - **Log changes:** `CHANGELOG.md`.
 
 ---

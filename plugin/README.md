@@ -74,7 +74,7 @@ self-contained plugin — nothing needs building to install.
 
 ## Install
 
-**Cowork:** open the `generative-cinema.plugin` file in chat and press install.
+**Cowork:** download the latest [`generative-cinema.plugin`](https://github.com/rjmoggach/generative-cinema/releases/latest/download/generative-cinema.plugin) from Releases, open it in chat, and press install.
 
 **Claude Code (from this repo as a marketplace):**
 

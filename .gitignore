@@ -40,6 +40,5 @@ skills/dist/
 *.skill
 
 # Assembled plugin (regenerate with: python plugin/assemble.py --package)
-# The repo-root generative-cinema.plugin ships prebuilt so users don't have to build it.
+# Not committed — distributed as a GitHub Release asset (see README → Install).
 *.plugin
-!/generative-cinema.plugin
