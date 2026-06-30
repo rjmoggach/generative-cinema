@@ -2,7 +2,7 @@
 """Assemble the generative-cinema plugin from the repo's canonical sources.
 
 The repo root holds the source of truth: `context/` (the library) and
-`skills/*/SKILL.md` (the four skills, with bundled `references/`). This script
+`skills/*/SKILL.md` (the five skills, with bundled `references/`). This script
 regenerates the plugin's single shared library and repoints every skill reference
 at `${CLAUDE_PLUGIN_ROOT}/context/...` so there is no per-skill duplication.
 
@@ -24,7 +24,7 @@ SKILLS_SRC = REPO / "skills"
 CTX_OUT = PLUGIN / "context"
 SKILLS_OUT = PLUGIN / "skills"
 
-SKILLS = ["project-context", "sequence-design", "shot-prompt", "model-docs"]
+SKILLS = ["project-context", "sequence-design", "shot-prompt", "model-docs", "footage-transform"]
 
 HELPERS = [
     SKILLS_SRC / "project-context/references/questioning-framework.md",

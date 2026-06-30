@@ -64,6 +64,18 @@ MANIFEST = {
         ("guide-shot-selection.md", "references/guide-shot-selection.md"),
         ("guide-lens-language.md", "references/guide-lens-language.md"),
     ],
+    "footage-transform": [
+        ("guide-footage-transformation.md", "references/guide-footage-transformation.md"),
+        ("guide-ai-generation-strategy.md", "references/guide-ai-generation-strategy.md"),
+        ("reference-film-grammar.md", "references/reference-film-grammar.md"),
+        ("guide-lens-language.md", "references/guide-lens-language.md"),
+        ("model-currency-2026-06.md", "references/model-currency-2026-06.md"),
+        ("model-video-seedance-pro.md", "references/models/model-video-seedance-pro.md"),
+        ("model-video-runway-gen4-turbo.md", "references/models/model-video-runway-gen4-turbo.md"),
+        ("model-video-kling-3.md", "references/models/model-video-kling-3.md"),
+        ("model-video-wan-2-6.md", "references/models/model-video-wan-2-6.md"),
+        ("model-video-google-veo-3-1.md", "references/models/model-video-google-veo-3-1.md"),
+    ],
     "model-docs": [
         ("model-currency-2026-06.md", "references/model-currency-2026-06.md"),
         ("model-image-flux-pro.md", "references/example-model-doc.md"),

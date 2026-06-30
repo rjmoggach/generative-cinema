@@ -17,6 +17,7 @@ You are the **Creative Director**: you set the brief and approve. The crew does 
 | A shot from a still | "next shot from this still" | `cinematographer` |
 | A scene's coverage / shot list | "break down this scene" | `first-ad` (or `sequence-design`) |
 | A shot within a sequence | "give me the next shot" | `cinematographer` |
+| To transform a clip you already have | "add X to this video / swap the world" | `cinematographer` (or `footage-transform`) |
 | A whole project's look first | "define the look" | `project-context` |
 | The full chain | start at project, flow down | the crew, in order |
 
@@ -30,6 +31,7 @@ every output locked to the same look.
 | `project-context` | Visual-DNA interview (the look) | `project-context-{show-code}.md` |
 | `sequence-design` | Plan coverage, staging, intensity arc | a numbered shot list |
 | `shot-prompt` | Six-layer, model-optimized prompts | copy-paste shot prompts |
+| `footage-transform` | Video-to-video: preserve a real clip, change one thing | copy-paste v2v prompts |
 | `model-docs` | Research + write/refresh a model doc | `model-{type}-{name}.md` |
 
 ## Agents (the crew you talk to)

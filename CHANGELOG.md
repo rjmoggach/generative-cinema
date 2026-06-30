@@ -2,6 +2,15 @@
 
 All notable changes to the Generative AI Context Library will be documented in this file.
 
+## v0.5.0 - 2026-06-30
+
+### New skill: footage-transform (video-to-video)
+
+- Added `footage-transform` skill — write/refine v2v prompts that preserve a real source clip and change one thing (add a VFX element, swap the environment, drop in a photoreal creature, sync a camera move to a spoken line, generate a transformed start frame).
+- Added model-agnostic craft guide `context/guide-footage-transformation.md` (preserve-then-change, lighting/optics integration, timed moves with dual anchors, prepended-intro duration budget, first-frame workflow).
+- Refreshed `context/model-video-seedance-pro.md` to Seedance 2.x: video-to-video `@source`/`@creature` input grammar, NON-IP guardrail, SFX-line convention, and 2.x input limits.
+- Wired the new skill into `skills/build.py` and `plugin/assemble.py`; docs updated to five skills.
+
 ## v0.4.1 - 2026-06-30
 
 ### Distribution fix

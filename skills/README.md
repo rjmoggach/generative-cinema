@@ -26,13 +26,14 @@ python skills/build.py --zip    # only rebuild the .skill zips
 `skills/dist/*.skill` are the installable/shareable packages. What each skill
 bundles is declared in the `MANIFEST` in `build.py`.
 
-## The four skills
+## The five skills
 
 | Skill | Level | Does | Produces |
 |---|---|---|---|
 | `project-context/` | Project | Guided visual-DNA interview | `project-context-<show-code>.md` |
 | `sequence-design/` | Scene | Plan coverage, staging, intensity arc | A numbered shot list |
 | `shot-prompt/` | Shot | Six-layer, model-optimized prompt generation | Copy-paste shot prompts |
+| `footage-transform/` | Shot (v2v) | Video-to-video: preserve a real clip, change one thing | Copy-paste v2v prompts |
 | `model-docs/` | Library | Research + write/refresh a model doc | `model-<type>-<name>.md` + currency sync |
 
 ## Pipeline
@@ -46,7 +47,9 @@ project-context  ->  sequence-design  ->  shot-prompt  ->  prompts
 1. **project-context** once per project to lock the look.
 2. **sequence-design** per scene to plan coverage, screen direction, intensity arc.
 3. **shot-prompt** per shot to emit model-optimized prompts from that plan.
-4. **model-docs** whenever a model is added or its facts age (also updates the
+4. **footage-transform** when a real clip is the starting point and you want to
+   preserve it and change one thing (video-to-video).
+5. **model-docs** whenever a model is added or its facts age (also updates the
    currency snapshot). After editing `context/`, run `build.py` to re-sync.
 
 ## Craft guides (in `context/`, bundled per skill)

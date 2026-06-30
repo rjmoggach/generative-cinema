@@ -40,6 +40,7 @@ Or from a local clone: `/plugin marketplace add ./generative-cinema` then the sa
 | A shot from a still | "next shot from this still" | `cinematographer` |
 | A scene's coverage / shot list | "break down this scene" | `first-ad` (or `sequence-design`) |
 | A shot within a sequence | "give me the next shot" | `cinematographer` |
+| To transform a clip you already have | "add X to this video / swap the world" | `cinematographer` (or `footage-transform`) |
 | A whole project's look first | "define the look" | `project-context` |
 | The full chain | start at project, flow down | the crew, in order |
 
@@ -60,6 +61,7 @@ skills' craft with a role's judgment.
 | `project-context` | Project | Visual-DNA interview → `project-context-{show-code}.md` |
 | `sequence-design` | Scene | Plan coverage, staging, screen direction, intensity arc → shot list |
 | `shot-prompt` | Shot | Six-layer, model-optimized prompts honoring the project look |
+| `footage-transform` | Shot (v2v) | Video-to-video prompts: preserve a real clip, change one thing (VFX, world swap, timed moves) |
 | `model-docs` | Library | Research + write/refresh a model doc; sync currency |
 
 ### Agents (the crew)
@@ -122,7 +124,7 @@ style anchors (directors, cinematographers, commercial directors, photographers)
 .claude-plugin/marketplace.json   This repo as a Claude Code marketplace → ./plugin
 plugin/                           The installable generative-cinema plugin (assembled)
   ├── .claude-plugin/plugin.json
-  ├── skills/   (4)   agents/ (5)   context/ (the bundled library)
+  ├── skills/   (5)   agents/ (5)   context/ (the bundled library)
   └── assemble.py                  Builds plugin/ from the repo-root sources
 context/                          Source of truth: model docs, craft guides, references
 skills/                           Source skill definitions (with bundled references/)

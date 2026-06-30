@@ -8,12 +8,12 @@
 
 | Attribute | Value |
 |---|---|
-| **Current Version** | 1.0 Pro |
-| **Model Type** | Text-to-Video, Image-to-Video |
-| **Primary Use** | Cinematic, multi-shot narrative video generation |
+| **Current Version** | 2.5 (see currency note above); 2.x grammar throughout |
+| **Model Type** | Text-to-Video, Image-to-Video, **Video-to-Video** |
+| **Primary Use** | Cinematic multi-shot narrative; footage transformation / VFX |
 | **Max Resolution** | 1080p |
-| **Max Duration** | 10 seconds |
-| **Key Features** | Multi-shot sequences, character consistency, complex camera moves |
+| **Max Duration** | 30s single-pass (2.5); 4–15s typical for v2v transforms |
+| **Key Features** | Multi-shot sequences, character consistency, complex camera moves, video-to-video transformation |
 
 ---
 
@@ -85,6 +85,68 @@ Describe a series of continuous actions for a single subject.
 This is Seedance's standout feature. Use the phrase **"shot switch"** or **"cut to"** to explicitly signal a transition between scenes. The model will maintain character and style consistency.
 
 - **Prompt**: `"Close-up of a detective's determined face, cinematic lighting. Shot switch. A low-angle shot of him entering a dark, abandoned factory. Shot switch. The camera follows him as he discovers a single, muddy footprint on the concrete floor."`
+
+---
+
+## Video-to-Video (footage transformation)
+
+Seedance 2.x can take a clip the user already has as the **base** and transform it —
+add a VFX element, swap the environment, drop in a photoreal creature, sync a camera
+move to a spoken line. For the model-agnostic craft (preserve-then-change, lighting
+integration, timed moves, duration budget), see
+[`guide-footage-transformation.md`](guide-footage-transformation.md). The
+Seedance-specific *syntax* is below.
+
+### Input declarations
+
+The source clip is the **base, not a style reference**. Declare it on one line:
+
+```
+@source: Original <clip name> — <who/what is in it>. Preserve <identity, face,
+wardrobe, performance, framing, camera and motion> exactly; <the one thing to change>.
+```
+
+When a transformation needs a real texture the model keeps faking (an animal's fur, a
+specific material), add a **second input** as a texture-only reference:
+
+```
+@creature: Reference photo of a real <animal> — <fur / face / anatomy notes>.
+Appearance and texture reference only; ignore the photo's background and lighting,
+do not use it for the environment.
+```
+
+### Specs line
+
+One compact line, always carrying the source-matching constraints:
+
+```
+Photoreal. <aspect, default 16:9>. <duration — match the source clip>s. <look/grade>.
+NON-IP — generic <creature/design>, not based on any brand or character.
+<SFX only | SFX and source dialogue only>.
+```
+
+- **Match the source runtime by default.** Extend only when a payoff needs room, and say why.
+- **NON-IP guardrail** belongs in the specs line whenever a creature, armor, vehicle, or
+  character design is added — generic, never a branded character. It also tends to
+  generate more reliably than a trademarked design.
+- **Audio:** `SFX only` for added effects; `SFX and source dialogue only` when the source
+  talk track must survive (e.g. a zoom synced to a spoken line).
+
+### Scene action + SFX
+
+Describe **continuous camera movement** (the source is one take), not cuts. Lead with the
+shot/lens and "same framing as the source," then the preserved performance, then the
+transformation, then any timed move; close with the lock-down clause. End with a specific,
+ordered, **behavioral** SFX line (not "fire" but "a soft whoomph as it catches, then a low
+steady flame roar and crackle, occasional ember pop").
+
+### Seedance 2.x input limits
+
+Images ≤ 9; videos ≤ 3 items, total ≤ 15s; audio ≤ 3 MP3s, total ≤ 15s; total mixed
+inputs ≤ 12; generation duration 4–15s. A source clip plus a texture-reference photo fits
+easily. If a request needs more inputs than allowed, flag it and say what to prioritize.
+
+> **No negative prompts.** As with all Seedance work, describe what you want, not what to avoid.
 
 ---
 
