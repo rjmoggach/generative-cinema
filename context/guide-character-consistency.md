@@ -25,7 +25,7 @@ Each entry uses the library's decision-unit format:
 - **Prompt translation:** generate one **front-facing, neutral-expression, evenly lit,
   high-res portrait on a plain neutral background** — no angle, no strong emotion, no
   dramatic light, no busy setting. The model reconstructs the face from this image; it must
-  show every feature in full fidelity. Filename: `char-{show}-{name}-id-front.png` (see
+  show every feature in full fidelity. Filename: `char-{name}-id-front.png` (see
   `guide-asset-reference.md` §9 for the full asset taxonomy and naming convention).
 - **Watch-outs:**
   - **Angled anchors** (3/4, profile) hide half the face and degrade cheek, ear, and jaw
@@ -103,8 +103,8 @@ constraint — not to regenerate and hope.
     field jacket (#4a5240), relaxed boxy silhouette, patch pockets` — not `olive jacket`.
     Silhouette is the constraint that prevents the model from reinterpreting cut.
   - Define states explicitly and give each a filename following the asset taxonomy:
-    `char-{show}-{name}-fit-day1.png`, `char-{show}-{name}-fit-day1-wet.png`,
-    `char-{show}-{name}-fit-day2-damaged.png` (see `guide-asset-reference.md` §9).
+    `char-{name}-fit-day1.png`, `char-{name}-fit-day1-wet.png`,
+    `char-{name}-fit-day2-damaged.png` (see `guide-asset-reference.md` §9).
   - **Progress states by editing the prior state**, never by regenerating from scratch.
     Day-1-wet is an i2i edit of day-1-clean at low-moderate denoise (~0.3–0.45) — this
     preserves fabric texture, garment shape, and the specific crease fingerprint of the
@@ -129,8 +129,8 @@ constraint — not to regenerate and hope.
   pinned and held across every shot in which it appears; any absent field is an invitation for
   the model to place or colour the element differently.
 - **Prompt translation:**
-  - Define a baseline and all variant states; give each a filename: `char-{show}-{name}-hmu-clean.png`,
-    `char-{show}-{name}-hmu-wound-01.png`, `char-{show}-{name}-hmu-aged.png`.
+  - Define a baseline and all variant states; give each a filename: `char-{name}-hmu-clean.png`,
+    `char-{name}-hmu-wound-01.png`, `char-{name}-hmu-aged.png`.
   - Pin every SFX element with full specificity: `2 cm laceration, inner left eyebrow to upper
     lid, fresh blood (#b03a2e), slight surrounding swelling.` Position (which feature), side
     (left / right), size (cm), and hex are all required.
@@ -185,7 +185,7 @@ generating any scene work for the character.
 ## Quick application
 
 1. Generate the **hero identity reference** first: front-facing, neutral expression, even
-   light, high-res, neutral background — stored as `char-{show}-{name}-id-front.png`.
+   light, high-res, neutral background — stored as `char-{name}-id-front.png`.
 2. Write the **verbatim descriptor block** (50-80 words, hex-pinned for every colour that
    must hold) and store it in the character spec file.
 3. Set the **reference-vs-LoRA gate**: one-off → reference only; recurring hero → reference +

@@ -53,7 +53,7 @@ section), `${CLAUDE_PLUGIN_ROOT}/context/guide-character-consistency.md`, and
 The **Identity** section of `char-{show}-{name}.md`:
 
 - **Casting note** — one director-facing sentence on typage and presence.
-- **Hero reference** prompt + image path: `assets/char/{name}/char-{name}-hero.png`.
+- **Hero reference** prompt + image path: `assets/char/{name}/char-{name}-id-front.png`.
 - **Identity block** — 50–80 words, verbatim-ready, hex-pinned where it matters.
 - **Reference-vs-LoRA decision** — lock level, reference count and strength,
   LoRA trigger word if trained.

@@ -41,9 +41,9 @@ reference and identity block before beginning.
 2. **Set the silhouette** — the read from across the room. Name it (A-line, boxy,
    military, draped, broken-in) and hold it across every state. Silhouette must not
    drift between wardrobe states; only surface detail changes.
-3. **Build the turnaround** on the five alignment views (front / 45° / side /
-   45° back / rear). Generate each view using the hero anchor as reference; use the
-   alignment lines from `guide-turnaround-sheets.md` to lock proportion, hem,
+3. **Build the turnaround** on the six alignment views (front / 3/4 left / side left /
+   side right / 3/4 right / back). Generate each view using the hero anchor as reference;
+   use the alignment lines from `guide-turnaround-sheets.md` to lock proportion, hem,
    shoulder line, and waistband across views.
 4. **Lock garments by name, silhouette, and hex** — no colour adjectives; only hex
    codes. Name every piece (`charcoal-linen-trench #2C2C2C`, `white-poplin-shirt`,
@@ -59,7 +59,7 @@ reference and identity block before beginning.
 The **Turnaround** and **Wardrobe** sections of `char-{show}-{name}.md`:
 
 - **Turnaround images** and prompts: `assets/char/{name}/char-{name}-turn-front.png`,
-  `-turn-45.png`, `-turn-side.png`, `-turn-45back.png`, `-turn-rear.png`.
+  `-turn-3q-l.png`, `-turn-side-l.png`, `-turn-side-r.png`, `-turn-3q-r.png`, `-turn-back.png`.
 - **Fit state images** (full-look by wardrobe state): `char-{name}-fit-hero.png`,
   `-fit-action.png`, `-fit-distressed.png`, plus any show-specific fit images.
 - **Garment lock list** — every piece named, silhouette described, hex-coded.

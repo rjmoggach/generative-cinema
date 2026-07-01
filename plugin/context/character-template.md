@@ -1,5 +1,9 @@
 # {SHOW} - {Name} - Character Sheet
 
+---
+
+## Identity
+
 > **Descriptor block** - paste verbatim into every downstream prompt:
 >
 > {50-80 words. Face structure, hair color and texture, skin tone with hex, body build,
@@ -7,10 +11,6 @@
 > Example: "Mid-30s man, lean build, sharp jaw, close-cropped dark brown hair, pale
 > olive skin (#D4B896), faint scar above left brow. Default: slate-grey wool peacoat
 > (#4A4E57), charcoal trousers, white shirt open at collar."}
-
----
-
-## Identity
 
 ### Hero reference
 

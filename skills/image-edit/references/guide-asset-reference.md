@@ -131,7 +131,7 @@ inspired by them. See `guide-art-direction.md`.
     hmu         char-eli-hmu-clean.png   char-eli-hmu-wound-01.png
   ```
 
-  Facets: `id` - `turn` - `fit` - `hmu`. Views: `front/back/side-l/side-r/3q-l/3q-r`.
+  Facets: `id` - `turn` - `fit` - `hmu` - `expr` - `pose` - `palette`. Views: `front/back/side-l/side-r/3q-l/3q-r`.
   All lowercase kebab-case; `-vNN` version suffix optional.
 - **Watch-outs:** everything the model writes goes to the **user's working folder**,
   never the plugin repo; keep names ASCII and kebab so paths stay portable.

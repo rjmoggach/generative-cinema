@@ -146,7 +146,7 @@ reference set and must read as visually coherent with it.
     surprise / anger); mechanism A from `guide-image-editing.md` §3-A (single-attribute
     conversational edit) at very low denoise (~0.2–0.3); change only the expression
     descriptor; hold face structure and descriptor block verbatim. Filename pattern:
-    `char-eli-id-expr-smile.png`, `char-eli-id-expr-frown.png`.
+    `char-eli-expr-smile.png`, `char-eli-expr-frown.png`.
   - **Watch-outs:** strong expressions distort face structure at higher denoise — stay at
     ~0.2–0.3 and name the expression precisely (`"open smile, teeth visible, eyes
     crinkled"`) rather than relying on the model to interpret a vague affect like `"happy"`.
