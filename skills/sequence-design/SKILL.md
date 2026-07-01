@@ -84,11 +84,22 @@ Intensity arc: <open → peak at the turn → resolve>
 
 S<n>-01  Establishing — <size>, <angle>, <lens>, <move> — serves <beat> — intensity <low/med/high>
 S<n>-02  Master — ...
-S<n>-03  Coverage CU — ...
+S<n>-03  Coverage CU — <lens> — serves <beat> — intensity <x> — refs: char-eli, set-livingroom
 ...
 ```
 
-## Step 7 — Hand off to shot-prompt
+## Step 7 — Attach asset references
+
+Per [`references/guide-asset-reference.md`](references/guide-asset-reference.md) §10, scan
+the working folder for `char-`/`prop-`/`set-` spec files (`assets/` and any loose
+`{type}-{show}-{name}.md`). For each shot, append `refs: <id>[, <id>...]` naming the
+assets that beat needs — the character(s), prop(s), and set the shot must carry
+identity for. A shot with no locked assets in frame omits `refs:` entirely. This is
+the contract `shot-prompt` reads to attach the right anchor images and identity
+blocks; a shot that needs an asset but omits `refs:` will re-derive identity from
+text and drift.
+
+## Step 8 — Hand off to shot-prompt
 
 State the target model(s) and pass the shot list to `shot-prompt`, which renders
 each line into a model-optimized prompt using the locked prefix and continuity
