@@ -92,6 +92,18 @@ MANIFEST = {
         ("model-image-seedream-4.md", "references/models/model-image-seedream-4.md"),
         ("model-image-flux-pro.md", "references/models/model-image-flux-pro.md"),
     ],
+    "character-sheet": [
+        ("reference-craft-character.md", "references/reference-craft-character.md"),
+        ("guide-character-consistency.md", "references/guide-character-consistency.md"),
+        ("guide-turnaround-sheets.md", "references/guide-turnaround-sheets.md"),
+        ("guide-asset-reference.md", "references/guide-asset-reference.md"),
+        ("guide-image-editing.md", "references/guide-image-editing.md"),
+        ("model-currency-2026-06.md", "references/model-currency-2026-06.md"),
+        ("model-editing-flux-kontext.md", "references/models/model-editing-flux-kontext.md"),
+        ("model-image-gemini-flash.md", "references/models/model-image-gemini-flash.md"),
+        ("model-image-seedream-4.md", "references/models/model-image-seedream-4.md"),
+        ("model-image-flux-pro.md", "references/models/model-image-flux-pro.md"),
+    ],
 }
 
 EXCLUDE_NAMES = {".DS_Store"}
