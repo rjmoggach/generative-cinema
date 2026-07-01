@@ -42,3 +42,22 @@ coverage, staging, A/I/L patterns.
 
 - https://magichour.ai/blog/how-to-keep-characters-consistent-in-ai-video
 - https://blog.mage.space/article/best-ai-video-generators-consistent-characters-2026/9459a229-806d-4a73-8abf-a19db645a248
+
+## Janet Hirshenson & Jane Jenkins, _A Star Is Found_
+
+the casting director's craft: presence, chemistry, reading an audition, star-making.
+
+- https://www.goodreads.com/book/show/398485.A_Star_Is_Found
+
+## Deborah Nadoolman Landis, _FilmCraft: Costume Design_ / _Dressed_
+
+wardrobe as character; sixteen designers on envisioning character through clothes; a century of Hollywood costume.
+
+- https://books.google.com/books/about/FilmCraft_Costume_Design.html?id=3yCkCgAAQBAJ
+- https://www.deborahlandis.com/publications
+
+## Penny Delamar, _The Complete Make-Up Artist_ (with Richard Corson, _Stage Makeup_)
+
+film/TV/theatre makeup craft: naturalistic looks, aging, SFX, and continuity discipline.
+
+- https://www.amazon.com/Complete-Make-Up-Artist-Working-Television/dp/0810119692
