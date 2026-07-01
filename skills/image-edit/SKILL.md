@@ -35,9 +35,9 @@ the source is a video clip, use `footage-transform`.
 
 1. **Project / world lock (if any).** If the user names a show code, read
    `project-context-<show-code>.md` (and `art-bible-<show-code>.md` if present) and
-   hold the Standard Prompt Prefix, hex codes, lighting, lens specs, atmosphere, and
-   forbidden terms. A one-off with no project file is fine — say it won't be
-   consistency-locked.
+   hold the Standard Prompt Prefix, hex codes, CMF lexicon, style reference, lighting,
+   lens specs, atmosphere, and forbidden terms; construct prompts from those fields.
+   A one-off with no project file is fine — say it won't be consistency-locked.
 2. **Load the craft guides:**
    [`references/guide-image-editing.md`](references/guide-image-editing.md) — the
    durable i2i principles (preserve-then-change, edit mechanisms, the denoise dial,

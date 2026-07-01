@@ -60,8 +60,9 @@ Read these before writing any prompt:
 
 If the user names a show code, read `project-context-{show}.md` (and
 `art-bible-{show}.md` if present) and inherit the Standard Prompt Prefix, palette hex
-codes, lighting vocabulary, grade, lens specs, atmosphere, and forbidden terms. Hold
-these consistently across the master plate, all coverage, and all variants.
+codes, CMF lexicon, style reference, lighting vocabulary, grade, lens specs, atmosphere,
+and forbidden terms; construct prompts from those fields. Hold these consistently across
+the master plate, all coverage, and all variants.
 
 ## Step 2 — Master plate
 

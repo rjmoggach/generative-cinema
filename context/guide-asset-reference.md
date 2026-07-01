@@ -107,7 +107,8 @@ preserves the fingerprint and keeps the progression continuous. See
 Assets are not islands. The world bible (`art-bible-{show}.md`) sets the global style,
 palette, material lexicon, and grade; every character/prop/location asset **inherits**
 it so the world coheres. Construct asset prompts *from* the bible's fields, not loosely
-inspired by them. See `guide-art-direction.md`.
+inspired by them. The bible itself is built and maintained via `guide-art-direction.md`
+and the `art-direction` skill — see that guide for the full production-design mechanics.
 
 ## 9. Naming & storage (the asset taxonomy)
 

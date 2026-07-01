@@ -59,8 +59,8 @@ Read these before writing any prompt:
 
 If the user names a show code, read `project-context-{show}.md` (and
 `art-bible-{show}.md` if present) and inherit the Standard Prompt Prefix, palette hex
-codes, material lexicon, lighting logic, and forbidden terms. Hold these consistently
-across all views and states.
+codes, CMF lexicon, style reference, lighting logic, and forbidden terms; construct
+prompts from those fields. Hold these consistently across all views and states.
 
 ## Step 2 — Hero anchor
 

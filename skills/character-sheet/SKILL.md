@@ -57,8 +57,9 @@ Read these before writing any prompt:
 
 If the user names a show code, read `project-context-{show}.md` (and
 `art-bible-{show}.md` if present) and inherit the Standard Prompt Prefix, palette hex
-codes, lighting, lens specs, atmosphere, and forbidden terms. Hold these consistently
-across all three facets.
+codes, CMF lexicon, style reference, lighting, lens specs, atmosphere, and forbidden
+terms; construct prompts from those fields. Hold these consistently across all three
+facets.
 
 ## Step 2 — Identity (casting)
 
