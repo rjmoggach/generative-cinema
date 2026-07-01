@@ -25,7 +25,7 @@ You are the **Creative Director**: you set the brief and approve. The crew does 
 No project context is required for a one-off — only load a show bible when you want
 every output locked to the same look.
 
-## Skills (seven)
+## Skills (nine)
 
 | Skill | Does | Produces |
 |---|---|---|
@@ -35,6 +35,8 @@ every output locked to the same look.
 | `footage-transform` | Video-to-video: preserve a real clip, change one thing | copy-paste v2v prompts |
 | `image-edit` | Image-to-image: preserve a real still, change one thing | copy-paste i2i prompts |
 | `character-sheet` | Build a persistent character reference: hero identity, turnaround, wardrobe + HMU states | `char-{show}-{name}.md` + `assets/char/{name}/` |
+| `prop-turntable` | Build a persistent prop reference: hero anchor, orthographic ring, detail views, state variants/multiples | `prop-{show}-{name}.md` + `assets/prop/{name}/` |
+| `location-pack` | Build a location/set reference: master establishing plate, coverage, time-of-day/weather variants, continuity table | `set-{show}-{name}.md` + `assets/set/{name}/` |
 | `model-docs` | Research + write/refresh a model doc | `model-{type}-{name}.md` |
 
 ## Agents (the crew you talk to)
@@ -51,6 +53,8 @@ Crew personas that apply the skills' craft with a role's judgment and voice.
 | `casting-director` | Art dept | "Lock a character's identity" — hero portrait, multi-angle bundle, locked descriptor block |
 | `costume-designer` | Art dept | "Build the turnaround / wardrobe continuity" — character model sheet + wardrobe states |
 | `makeup-hair` | Art dept | "Lock the HMU states" — clean/aged/wounded/wet state references per character |
+| `propmaster` | Art dept | "Build the prop turntable" — hero anchor, multi-angle ring, detail and state variants |
+| `location-scout` | Art dept | "Build the location pack" — master plate, coverage, time/weather variants |
 
 Typical flow: you brief the **Director** → the **1st AD** breaks down coverage →
 the **DP** hands back each shot's prompt → the **Script Supervisor** checks it cuts

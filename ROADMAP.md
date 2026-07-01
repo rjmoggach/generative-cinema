@@ -138,7 +138,7 @@ assets; one that only knows the craft can't realize them.
 |---|---|
 | **Creative context** | Hero vs. dressing vs. action props; sourcing; **multiples** (stunt/destruction/continuity duplicates that must match); per-prop state variants (pristine/aged/bloodied). |
 | **Technical context** | Builds a **prop turntable / multi-view object sheet**: front · back · L/R side · top · ¾ hero · detail/macro · optional 8–12-step 360. Anchor-then-fan-out from one clean frame-filling hero view. For props that must survive many angles/destruction, use **3D-assist** (Blender MCP) to lock geometry and render orthographic/depth views (see §6). |
-| **Builds** | `prop-{show}-{name}.md` + `/assets/prop-{name}/*.png`. |
+| **Builds** | `prop-{show}-{name}.md` + `assets/prop/{name}/`. |
 | **Agent** | `propmaster`. |
 
 ### 3.6 Location Scout & Manager — *location packs*
@@ -147,7 +147,7 @@ assets; one that only knows the craft can't realize them.
 |---|---|
 | **Creative context** | The **scouting packet**: recce photography well beyond the on-screen frame, sun-path/lighting notes, logistics. Environment carries a disproportionate amount of the storytelling. |
 | **Technical context** | Builds a **location pack / environment reference set**: a locked **master establishing plate**, multi-angle coverage (incl. reverse angle), and **time-of-day / weather variants derived from the same locked geometry** (change one variable at a time). For reverse-angle coherence and **set extension**, use 3D-assist (block the space, render plates + depth). |
-| **Builds** | `location-{show}-{name}.md` + `/assets/location-{name}/*.png`. |
+| **Builds** | `set-{show}-{name}.md` + `assets/set/{name}/`. |
 | **Agent** | `location-scout`. |
 
 ---
@@ -159,8 +159,8 @@ assets; one that only knows the craft can't realize them.
 | **`image-edit`** ◀ *foundation* | Shot (i2i) | "Change this still to X / swap the background / recolor the costume / add a wound" — the i2i sibling of `footage-transform`. Six-layer discipline, scoped to single-image edits and partial-denoise. | model docs |
 | **`art-direction`** | Art bible | PD interview → `art-bible-{show}.md` (palette, CMF, era, global style ref, asset index). Extends `project-context`. | `project-context` output |
 | **`character-sheet`** | Asset | Build/refresh `char-{show}-{name}.md`: hero identity → turnaround → expressions → wardrobe states → HMU states. | `image-edit`, art-bible |
-| **`prop-turntable`** | Asset | Build/refresh `prop-{show}-{name}.md`: hero view → orthographic ring → details → optional 360 (3D-assist optional). | `image-edit`, Blender |
-| **`location-pack`** | Asset | Build/refresh `location-{show}-{name}.md`: master plate → coverage → time/weather variants (3D-assist optional). | `image-edit`, Blender |
+| **`prop-turntable`** | Asset | Build/refresh `prop-{show}-{name}.md`: hero view → orthographic ring → details → optional 360 (3D-assist deferred). | `image-edit` |
+| **`location-pack`** | Asset | Build/refresh `set-{show}-{name}.md`: master plate → coverage → time/weather variants (3D-assist deferred). | `image-edit` |
 
 All asset skills share one engine — **`image-edit`** — to derive views and states
 from a locked anchor, and all inherit the world from `art-bible`. This is why
@@ -261,11 +261,12 @@ Sequenced by dependency and ROI. Each phase is shippable on its own.
 - ✅ Guides: `guide-character-consistency.md`, `guide-turnaround-sheets.md`.
 - ✅ Asset naming convention: `assets/char/{name}/` (typed taxonomy in `guide-asset-reference.md` §9).
 
-### Phase 2 — Props & Locations
-- Agents: `propmaster`, `location-scout`.
-- Skills: `prop-turntable`, `location-pack`.
-- Guides: `guide-prop-turntable.md`, `guide-location-pack.md`, `guide-3d-assist.md`.
-- Pilot the Blender depth-pass workflow on one hero prop; document the result.
+### Phase 2 - Props & Locations ✅ *shipped in v0.7.0*
+- ✅ Agents: `propmaster`, `location-scout`.
+- ✅ Skills: `prop-turntable`, `location-pack`.
+- ✅ Guides: `guide-prop-turntable.md`, `guide-location-pack.md`.
+- ✅ Asset naming: `assets/prop/{name}/` + `assets/set/{name}/`.
+- 3D-assist (Blender depth-pass) deferred — noted in guides; see §6 for approach.
 
 ### Phase 3 — Production Designer / world bible
 - Agent: `production-designer`. Skill: `art-direction` → `art-bible-{show}.md`.

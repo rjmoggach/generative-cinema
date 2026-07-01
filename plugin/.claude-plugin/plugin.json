@@ -1,6 +1,6 @@
 {
   "name": "generative-cinema",
-  "version": "0.6.0",
+  "version": "0.7.0",
   "description": "A cinematic context system for generative image/video: define a project's visual language, plan coverage, write model-optimized shot prompts, and keep the model library current \u2014 backed by film-grammar and craft references and a review crew (script supervisor, director, researcher).",
   "author": {
     "name": "Robert Moggach",

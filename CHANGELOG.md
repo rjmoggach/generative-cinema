@@ -2,6 +2,17 @@
 
 All notable changes to the Generative AI Context Library will be documented in this file.
 
+## v0.7.0 - 2026-07-01
+
+### New: Props & Locations (art department, Phase 2)
+
+- Added the `prop-turntable` skill — build a persistent prop reference (hero anchor, orthographic ring, detail views, state variants/multiples) written to your working folder; uses `image-edit` as the derive engine.
+- Added the `location-pack` skill — build a location/set reference (master establishing plate, coverage incl. the reverse angle, time-of-day/weather variants from locked geometry) with a continuity table.
+- Added two art-department agents: `propmaster` (prop turntables) and `location-scout` (location packs).
+- Added creative craft `context/reference-craft-artdept.md` (props + locations/sets artistry with real-master anchors) and technical guides `guide-prop-turntable.md` + `guide-location-pack.md`. 3D-assist (Blender) is noted as a deferred technique.
+- Extended the asset naming taxonomy in `guide-asset-reference.md` §9 with prop facets (`hero`/`ortho`/`detail`/`360`), location facets (`plate`/`cov`/`tod`), and `top`/`bottom` views. Environment asset type is `set`.
+- Wired into `skills/build.py` + `plugin/assemble.py`; docs updated to nine skills / ten agents; sources added to `knowledge-base/Miscellaneous-Sources.md`.
+
 ## v0.6.0 - 2026-06-30
 
 ### New: Character pipeline (art department, Phase 1)
