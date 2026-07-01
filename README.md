@@ -1,4 +1,4 @@
-# generative-cinema
+# generative-wrangler
 
 **Version**: 0.8.0 · **Updated**: 2026-07-01
 
@@ -19,16 +19,16 @@ at the repo root (`context/`, `skills/`).
 
 ## Install
 
-**Cowork:** download the latest [`generative-cinema.plugin`](https://github.com/rjmoggach/generative-cinema/releases/latest/download/generative-cinema.plugin) from [Releases](https://github.com/rjmoggach/generative-cinema/releases/latest), open it in chat, and press install.
+**Cowork:** download the latest [`generative-wrangler.plugin`](https://github.com/rjmoggach/generative-wrangler/releases/latest/download/generative-wrangler.plugin) from [Releases](https://github.com/rjmoggach/generative-wrangler/releases/latest), open it in chat, and press install.
 
 **Claude Code:**
 
 ```
-/plugin marketplace add rjmoggach/generative-cinema
-/plugin install generative-cinema@generative-cinema
+/plugin marketplace add rjmoggach/generative-wrangler
+/plugin install generative-wrangler@generative-wrangler
 ```
 
-Or from a local clone: `/plugin marketplace add ./generative-cinema` then the same install.
+Or from a local clone: `/plugin marketplace add ./generative-wrangler` then the same install.
 
 ---
 
@@ -151,7 +151,7 @@ style anchors (directors, cinematographers, commercial directors, photographers)
 
 ```
 .claude-plugin/marketplace.json   This repo as a Claude Code marketplace → ./plugin
-plugin/                           The installable generative-cinema plugin (assembled)
+plugin/                           The installable generative-wrangler plugin (assembled)
   ├── .claude-plugin/plugin.json
   ├── skills/   (10)   agents/ (11)   context/ (the bundled library)
   └── assemble.py                  Builds plugin/ from the repo-root sources
@@ -173,7 +173,7 @@ plugin. Use `--package` to also build the clickable `.plugin`.
 
 - **Refresh model facts:** `model-docs` skill (or the `researcher` agent); update `context/model-currency-2026-06.md`.
 - **Add craft content:** write in the heuristic format under `context/`, wire into `skills/build.py` + `plugin/assemble.py`, rebuild.
-- **Rebuild the plugin:** `python plugin/assemble.py` (add `--package` to build `generative-cinema.plugin`). The `.plugin` is **not** committed — attach it to a GitHub Release on each version bump (`gh release create vX.Y.Z generative-cinema.plugin`) so the Cowork download link stays current.
+- **Rebuild the plugin:** `python plugin/assemble.py` (add `--package` to build `generative-wrangler.plugin`). The `.plugin` is **not** committed — attach it to a GitHub Release on each version bump (`gh release create vX.Y.Z generative-wrangler.plugin`) so the Cowork download link stays current.
 - **Log changes:** `CHANGELOG.md`.
 
 ---

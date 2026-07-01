@@ -1,4 +1,4 @@
-# generative-cinema — ROADMAP
+# generative-wrangler — ROADMAP
 
 **Status:** Draft 1 · **Created:** 2026-06-30 · **Owner:** Rob (Creative Producer)
 

@@ -1,4 +1,4 @@
-# generative-cinema
+# generative-wrangler
 
 A flexible plugin for getting **cinematic, model-optimized prompts** for generative
 image/video — at any level of structure. Ask for a great one-off still prompt, the
@@ -92,15 +92,15 @@ self-contained plugin — nothing needs building to install.
 
 ## Install
 
-**Cowork:** download the latest [`generative-cinema.plugin`](https://github.com/rjmoggach/generative-cinema/releases/latest/download/generative-cinema.plugin) from Releases, open it in chat, and press install.
+**Cowork:** download the latest [`generative-wrangler.plugin`](https://github.com/rjmoggach/generative-wrangler/releases/latest/download/generative-wrangler.plugin) from Releases, open it in chat, and press install.
 
 **Claude Code (from this repo as a marketplace):**
 
 ```
-/plugin marketplace add rjmoggach/generative-cinema
-/plugin install generative-cinema@generative-cinema
+/plugin marketplace add rjmoggach/generative-wrangler
+/plugin install generative-wrangler@generative-wrangler
 ```
 
-Or from a local clone: `/plugin marketplace add ./generative-cinema` then the same
-install. Skills are namespaced (e.g., `generative-cinema:shot-prompt`); the crew
+Or from a local clone: `/plugin marketplace add ./generative-wrangler` then the same
+install. Skills are namespaced (e.g., `generative-wrangler:shot-prompt`); the crew
 agents become available to the main agent.

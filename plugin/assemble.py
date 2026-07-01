@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Assemble the generative-cinema plugin from the repo's canonical sources.
+"""Assemble the generative-wrangler plugin from the repo's canonical sources.
 
 The repo root holds the source of truth: `context/` (the library) and
 `skills/*/SKILL.md` (the seven skills, with bundled `references/`). This script
@@ -111,7 +111,7 @@ def validate():
 
 
 def package():
-    dest = REPO / "generative-cinema.plugin"
+    dest = REPO / "generative-wrangler.plugin"
     if dest.exists():
         dest.unlink()
     with zipfile.ZipFile(dest, "w", zipfile.ZIP_DEFLATED) as z:
