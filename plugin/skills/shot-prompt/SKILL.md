@@ -92,7 +92,32 @@ Every prompt **begins with the project's Standard Prompt Prefix verbatim**,
 front-loads the critical look in the first ~40 words, stays specific, uses
 positive phrasing, and respects the forbidden-terms list.
 
-## Step 5 — Sequence workflow
+## Step 5 — Consume attached references
+
+If a shot line carries `refs: <id>[, <id>...]` (the notation defined in
+[`references/guide-asset-reference.md`](${CLAUDE_PLUGIN_ROOT}/context/guide-asset-reference.md) §10),
+resolve every id **before** finalizing that shot's prompt:
+
+1. Locate the asset spec the id names — `char-{show}-{name}.md`, `prop-{show}-{name}.md`,
+   or `set-{show}-{name}.md` — and read its identity/descriptor block.
+2. Restate that identity/descriptor block **verbatim** as the prompt's identity segment.
+   Do not paraphrase it or re-derive identity from the shot description.
+3. Attach the asset's anchor image as the model reference: `assets/char/{name}/char-{name}-id-front.png`,
+   `assets/prop/{name}/prop-{name}-hero.png`, or `assets/set/{name}/set-{name}-plate.png`.
+4. Apply the two-block split from `guide-asset-reference.md` §2: **identity = reference**
+   (the attached anchor image plus its verbatim descriptor block) and **change = prompt**
+   (the shot's action, camera, lighting, and scene specifics only).
+5. Inherit that show's `art-bible-{show}.md` palette and camera/material/finish (CMF)
+   fields per §8, so every referenced asset stays graded to the world even when the
+   shot line doesn't repeat every hex code.
+
+For the technique behind deriving a new view, state, or edit from an existing
+reference, see [`references/guide-image-editing.md`](${CLAUDE_PLUGIN_ROOT}/context/guide-image-editing.md).
+
+A shot with no `refs:` proceeds as before — build identity from the project-context
+file and the shot's prose description.
+
+## Step 6 — Sequence workflow
 
 For a full sequence, generate **Establishing → Master → Coverage**:
 - Establishing/key still (wide, sets location + light) — FLUX.2 or Midjourney.
@@ -102,7 +127,7 @@ For a full sequence, generate **Establishing → Master → Coverage**:
   or Nano Banana 2 for edits, Veo for audio, Luma for HDR/physics).
 If asked for "all shots" without a count: 1 establishing + 1 master + 4–6 coverage.
 
-## Step 6 — Output format
+## Step 7 — Output format
 
 - Wrap **every** prompt in a triple-backtick code block (easy copy-paste).
 - Label each shot: `**S2-01 Establishing — LS, eye-level, static**`.
@@ -114,7 +139,7 @@ If asked for "all shots" without a count: 1 establishing + 1 master + 4–6 cove
 A worked, fully-populated example (single shot + batch sequence) is in
 [`references/output-examples.md`](${CLAUDE_PLUGIN_ROOT}/context/output-examples.md).
 
-## Step 7 — Iterate
+## Step 8 — Iterate
 
 After delivering, don't ask more questions unless the user requests changes. On
 "adjust X", change only that and regenerate. On model switch, re-optimize layer
@@ -127,4 +152,7 @@ emphasis and syntax while preserving the core look.
 3. Always use code blocks. One clarifying question at a time, max.
 4. Respect forbidden terms absolutely.
 5. Be specific over "cinematic". Front-load the most important 40 words.
-6. Check current model version in the currency file before quoting
+6. Check current model version in the currency file before quoting.
+7. A shot carrying `refs:` must include the attached anchor image(s) and the
+   verbatim identity block from each referenced asset spec — never re-derive
+   identity from text alone.

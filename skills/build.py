@@ -57,6 +57,8 @@ MANIFEST = {
         ("model-video-kling-3.md", "references/models/model-video-kling-3.md"),
         ("model-video-sora-2.md", "references/models/model-video-sora-2.md"),
         ("model-video-wan-2-6.md", "references/models/model-video-wan-2-6.md"),
+        ("guide-asset-reference.md", "references/guide-asset-reference.md"),
+        ("guide-image-editing.md", "references/guide-image-editing.md"),
     ],
     "sequence-design": [
         ("guide-sequence-construction.md", "references/guide-sequence-construction.md"),
@@ -64,6 +66,7 @@ MANIFEST = {
         ("guide-visual-structure.md", "references/guide-visual-structure.md"),
         ("guide-shot-selection.md", "references/guide-shot-selection.md"),
         ("guide-lens-language.md", "references/guide-lens-language.md"),
+        ("guide-asset-reference.md", "references/guide-asset-reference.md"),
     ],
     "footage-transform": [
         ("guide-footage-transformation.md", "references/guide-footage-transformation.md"),

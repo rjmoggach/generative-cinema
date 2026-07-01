@@ -147,6 +147,30 @@ and the `art-direction` skill — see that guide for the full production-design 
   never the plugin repo; keep names ASCII and kebab so paths stay portable.
 - **Anchors:** VFX/game asset-management naming (type-first hierarchy, versioned).
 
+## 10. Attaching references to shots
+
+- **Use when:** a shot uses one or more locked assets (character, prop, set) and
+  must carry their identity.
+- **Because:** the coverage layer knows which assets a beat needs; the shot layer
+  needs that list to attach the right anchor images and restate the right identity
+  blocks. A written contract keeps attach and consume in sync.
+- **Prompt translation — the notation:** end the shot line with
+  `refs: <id>[, <id>...]`, where each id is an asset spec-file stem:
+  `char-{name}` - `prop-{name}` - `set-{name}` (NO `{show}`, NO extension; the show
+  is implied by the loaded project). Example:
+
+  ```
+  S2-03  Coverage CU - 85mm - serves the turn - refs: char-eli, prop-revolver, set-livingroom
+  ```
+
+  Each id resolves to its spec (`char-{show}-{name}.md`) and anchor image
+  (`assets/char/{name}/char-{name}-id-front.png`, `assets/prop/{name}/prop-{name}-hero.png`,
+  `assets/set/{name}/set-{name}-plate.png`) via the taxonomy (§9).
+- **Watch-outs:** a shot that needs an asset but omits `refs:` will re-derive
+  identity from text and drift; an id with no matching spec is a broken reference —
+  the `script-supervisor` audits both.
+- **Anchors:** the continuity script (every shot names what it must match).
+
 ---
 
 ## Quick application
@@ -160,3 +184,5 @@ and the `art-direction` skill — see that guide for the full production-design 
 6. Hold the **light-key**; edit (don't regenerate) for progressions.
 7. Name and store per the **asset taxonomy** (§9): `{type}-{show}-{name}.md` +
    `assets/{type}/{name}/`, in the user's working folder.
+8. **Attach** the shot's assets with `refs:` (§10) so the shot layer carries identity
+   from the anchor image and restates the identity block verbatim.

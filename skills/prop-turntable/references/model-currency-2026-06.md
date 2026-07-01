@@ -38,6 +38,19 @@ quarterly — this space moves fast.
 
 ---
 
+## Reference-count & strength caveats (per model)
+
+The asset layer's reference-count guidance is version-sensitive - verify here before quoting.
+
+| Model | Effective reference capacity | Notes |
+|---|---|---|
+| Nano Banana Pro (Gemini 3 Pro Image) | ~14 objects / ~5 characters | strongest multi-subject holder |
+| FLUX.2 | up to ~10 references | strong multi-image reference |
+| Seedream 5 | up to ~10 references | multi-reference identity |
+| Luma Uni-1 | up to 9 references (explicit roles) | STYLE/CHARACTER/COMPOSITION role system |
+
+General: ~4-6 references is the consistency sweet spot; reference strength ~0.7 (workable 0.6-0.8). These numbers move with model versions - the `researcher` / `model-docs` loop keeps them current.
+
 ## Recently documented (Jun 2026)
 
 These were prior coverage gaps and now have full `model-*.md` docs:
