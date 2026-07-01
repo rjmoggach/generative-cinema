@@ -129,9 +129,17 @@ inspired by them. See `guide-art-direction.md`.
     turnaround  char-eli-turn-front.png  -side-l / -side-r / -back / -3q-l / -3q-r
     wardrobe    char-eli-fit-day1.png    char-eli-fit-day2-wet.png
     hmu         char-eli-hmu-clean.png   char-eli-hmu-wound-01.png
+  Props     prop-{show}-{name}.md          prop-sbw-revolver.md
+    hero    prop-revolver-hero.png
+    ortho   prop-revolver-ortho-front.png  -back / -side-l / -side-r / -top
+    detail  prop-revolver-detail-01.png    state suffix: prop-revolver-hero-aged.png
+  Sets      set-{show}-{name}.md           set-sbw-livingroom.md
+    plate   set-livingroom-plate.png
+    cov     set-livingroom-cov-01.png      (incl. the reverse angle)
+    tod     set-livingroom-tod-dawn.png    -tod-night / -tod-rain (one variable)
   ```
 
-  Facets: `id` - `turn` - `fit` - `hmu` - `expr` - `pose` - `palette`. Views: `front/back/side-l/side-r/3q-l/3q-r`.
+  Facets: `id` - `turn` - `fit` - `hmu` - `expr` - `pose` - `palette` - `hero` - `ortho` - `detail` - `360` - `plate` - `cov` - `tod`. Views: `front/back/side-l/side-r/3q-l/3q-r/top/bottom`.
   All lowercase kebab-case; `-vNN` version suffix optional.
 - **Watch-outs:** everything the model writes goes to the **user's working folder**,
   never the plugin repo; keep names ASCII and kebab so paths stay portable.
