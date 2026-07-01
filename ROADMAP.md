@@ -63,9 +63,9 @@ Project      project-context-{show}.md         ← the LOOK (DP/Director)
 ART BIBLE    art-bible-{show}.md               ← the WORLD (Production Designer)   ◀ NEW
    │           unifies palette · material/CMF · era · indexes every asset below
    │
-ASSETS       character-{show}-{name}.md         ← casting · costume · HMU           ◀ NEW
+ASSETS       char-{show}-{name}.md              ← casting · costume · HMU           ◀ NEW
              prop-{show}-{name}.md              ← propmaster                        ◀ NEW
-             location-{show}-{name}.md          ← location scout/manager            ◀ NEW
+             set-{show}-{name}.md               ← location scout/manager            ◀ NEW
    │           each = a markdown spec + a folder of locked reference images
    │
 Sequence     coverage shot list (1st AD)
@@ -105,7 +105,7 @@ assets; one that only knows the craft can't realize them.
 |---|---|
 | **Creative context** | Writes the **character breakdown** (age, look, presence) and locks one identity to one character for the whole show. |
 | **Technical context** | Produces the **hero identity reference**: a front-facing, evenly-lit, neutral-expression, high-res portrait — the single most load-bearing asset in the pipeline — plus a multi-angle identity bundle. Records the **locked descriptor block** (50–80 words, reused verbatim) and the **reference-vs-LoRA** decision (see §5). |
-| **Builds** | The identity section of `character-{show}-{name}.md` + `/assets/character-{name}/identity-*.png`. |
+| **Builds** | The identity section of `char-{show}-{name}.md` + `assets/char/{name}/identity-*.png`. |
 | **Agent** | `casting-director`. |
 
 ### 3.3 Costume Designer (Wardrobe) — *turnaround + wardrobe continuity*
@@ -114,7 +114,7 @@ assets; one that only knows the craft can't realize them.
 |---|---|
 | **Creative context** | Builds the **costume plot / wardrobe bible**: each costume change by script day, silhouette, color, distressing/state, with continuity notes. |
 | **Technical context** | Produces the **character turnaround / model sheet** (front · side · back · ¾×2, aligned on eye/shoulder/waist/knee/foot lines) — both a deliverable *and* the multi-angle reference bundle that boosts downstream identity. Locks wardrobe by exact garment name + silhouette + **hex color**, restated verbatim; tracks **costume states** (clean / wet / damaged). |
-| **Builds** | Turnaround + wardrobe-state section of `character-{show}-{name}.md`. |
+| **Builds** | Turnaround + wardrobe-state section of `char-{show}-{name}.md`. |
 | **Agent** | `costume-designer`. Also owns the general **character-design / model-sheet** craft. |
 
 ### 3.4 Makeup & Hair (HMU) — *look states + continuity*
@@ -123,11 +123,11 @@ assets; one that only knows the craft can't realize them.
 |---|---|
 | **Creative context** | Continuity discipline (a look must reproduce identically regardless of shoot order), **aging**, **SFX/prosthetics**, hair continuity, wound/scar/blood progression. |
 | **Technical context** | Maintains a small library of **HMU "state" references** per character (clean / aged / wounded / wet), each independently lockable — the AI equivalent of *molds and paint formulas on file*. Pins each injury by **position + side + size + hex**, restated every shot; progresses injuries by **editing from the previous state**, not regenerating. |
-| **Builds** | HMU-state section of `character-{show}-{name}.md` + `/assets/character-{name}/hmu-*.png`. |
+| **Builds** | HMU-state section of `char-{show}-{name}.md` + `assets/char/{name}/hmu-*.png`. |
 | **Agent** | `makeup-hair`. |
 
 > **Why casting + costume + HMU share one asset file.** A "character" is one
-> reference in practice. `character-{show}-{name}.md` is a single living file with
+> reference in practice. `char-{show}-{name}.md` is a single living file with
 > three sections (identity / wardrobe / HMU). The three agents are *facets* that
 > collaborate on facets of one asset — mirroring how a real production builds a
 > character.
@@ -158,7 +158,7 @@ assets; one that only knows the craft can't realize them.
 |---|---|---|---|
 | **`image-edit`** ◀ *foundation* | Shot (i2i) | "Change this still to X / swap the background / recolor the costume / add a wound" — the i2i sibling of `footage-transform`. Six-layer discipline, scoped to single-image edits and partial-denoise. | model docs |
 | **`art-direction`** | Art bible | PD interview → `art-bible-{show}.md` (palette, CMF, era, global style ref, asset index). Extends `project-context`. | `project-context` output |
-| **`character-sheet`** | Asset | Build/refresh `character-{show}-{name}.md`: hero identity → turnaround → expressions → wardrobe states → HMU states. | `image-edit`, art-bible |
+| **`character-sheet`** | Asset | Build/refresh `char-{show}-{name}.md`: hero identity → turnaround → expressions → wardrobe states → HMU states. | `image-edit`, art-bible |
 | **`prop-turntable`** | Asset | Build/refresh `prop-{show}-{name}.md`: hero view → orthographic ring → details → optional 360 (3D-assist optional). | `image-edit`, Blender |
 | **`location-pack`** | Asset | Build/refresh `location-{show}-{name}.md`: master plate → coverage → time/weather variants (3D-assist optional). | `image-edit`, Blender |
 
@@ -255,11 +255,11 @@ Sequenced by dependency and ROI. Each phase is shippable on its own.
 - `footage-transform` stays v2v-clean; the i2i triggers now live in `image-edit`.
 - **Why first:** every asset skill needs an i2i engine to derive views/states.
 
-### Phase 1 — Character pipeline *(hardest consistency problem, most reused)*
-- Agents: `casting-director`, `costume-designer`, `makeup-hair`.
-- Skill: `character-sheet` → `character-{show}-{name}.md` + image set.
-- Guides: `guide-character-consistency.md`, `guide-turnaround-sheets.md`.
-- Define the `/assets/character-{name}/` folder convention.
+### Phase 1 - Character pipeline ✅ *shipped in v0.6.0*
+- ✅ Agents: `casting-director`, `costume-designer`, `makeup-hair`.
+- ✅ Skill: `character-sheet` → `char-{show}-{name}.md` + image set.
+- ✅ Guides: `guide-character-consistency.md`, `guide-turnaround-sheets.md`.
+- ✅ Asset naming convention: `assets/char/{name}/` (typed taxonomy in `guide-asset-reference.md` §9).
 
 ### Phase 2 — Props & Locations
 - Agents: `propmaster`, `location-scout`.
@@ -324,8 +324,8 @@ is ready. See [`roadmap/README.md`](roadmap/README.md).
 2. **LoRA training:** the consistency ceiling for recurring heroes needs LoRA, which is
    out of the current text-prompt scope. Do we (a) just *advise* it and record the
    trigger word in the character sheet, or (b) add a `lora-train` skill/runbook later?
-3. **Asset storage:** confirm the `/assets/{type}-{name}/` folder convention and whether
-   image binaries live in-repo or in the user's working folder only.
+3. **Asset storage:** ✅ Resolved — `assets/{type}/{name}/` convention (type-first hierarchy,
+   see `guide-asset-reference.md` §9); image binaries live in the user's working folder only, never the plugin repo.
 4. **3D-assist scope:** how far to lean on Blender — every hero prop/location, or only
    the hardest cases? Pilot result (Phase 2) should answer this.
 

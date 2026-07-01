@@ -25,7 +25,7 @@ You are the **Creative Director**: you set the brief and approve. The crew does 
 No project context is required for a one-off — only load a show bible when you want
 every output locked to the same look.
 
-## Skills (the production workflow)
+## Skills (seven)
 
 | Skill | Does | Produces |
 |---|---|---|
@@ -34,6 +34,7 @@ every output locked to the same look.
 | `shot-prompt` | Six-layer, model-optimized prompts | copy-paste shot prompts |
 | `footage-transform` | Video-to-video: preserve a real clip, change one thing | copy-paste v2v prompts |
 | `image-edit` | Image-to-image: preserve a real still, change one thing | copy-paste i2i prompts |
+| `character-sheet` | Build a persistent character reference: hero identity, turnaround, wardrobe + HMU states | `char-{show}-{name}.md` + `assets/char/{name}/` |
 | `model-docs` | Research + write/refresh a model doc | `model-{type}-{name}.md` |
 
 ## Agents (the crew you talk to)
@@ -47,6 +48,9 @@ Crew personas that apply the skills' craft with a role's judgment and voice.
 | `first-ad` | 1st AD | "Break down this scene", "build a shot list" — an ordered coverage plan |
 | `script-supervisor` | Continuity | "Does this cut together?" — audits screen direction, eyelines, the line, look consistency |
 | `researcher` | Research | "Research model X" — isolated web research feeding `model-docs` |
+| `casting-director` | Art dept | "Lock a character's identity" — hero portrait, multi-angle bundle, locked descriptor block |
+| `costume-designer` | Art dept | "Build the turnaround / wardrobe continuity" — character model sheet + wardrobe states |
+| `makeup-hair` | Art dept | "Lock the HMU states" — clean/aged/wounded/wet state references per character |
 
 Typical flow: you brief the **Director** → the **1st AD** breaks down coverage →
 the **DP** hands back each shot's prompt → the **Script Supervisor** checks it cuts
@@ -55,9 +59,12 @@ together. Or skip straight to the **DP** for a single shot or one-off still.
 ## Shared library (`context/`)
 
 One copy of the knowledge base — craft guides (`guide-*.md`), film grammar and
-visual references (`reference-*.md`), per-model docs (`model-*.md`), the currency
-snapshot, and skill helper files. Every skill and agent reads it via
-`${CLAUDE_PLUGIN_ROOT}/context/...`, so there is no per-skill duplication.
+visual references (`reference-*.md`), creative references (`reference-craft-*.md`),
+per-model docs (`model-*.md`), the currency snapshot, and skill helper files. Every
+skill and agent reads it via `${CLAUDE_PLUGIN_ROOT}/context/...`, so there is no
+per-skill duplication. Character-pipeline additions: `guide-character-consistency.md`,
+`guide-turnaround-sheets.md`, `reference-craft-character.md`, and the typed asset
+naming taxonomy in `guide-asset-reference.md` (`assets/{type}/{name}/`).
 
 ## How it's built
 

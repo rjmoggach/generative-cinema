@@ -2,6 +2,16 @@
 
 All notable changes to the Generative AI Context Library will be documented in this file.
 
+## v0.6.0 - 2026-06-30
+
+### New: Character pipeline (art department, Phase 1)
+
+- Added the `character-sheet` skill — build a persistent, re-attachable character reference (hero identity + descriptor block, turnaround/model sheet, wardrobe states, makeup/hair states) that downstream shots carry identity from. Anchor-then-fan-out; uses `image-edit` as the derive engine; output written to the user's working folder.
+- Added three art-department agents: `casting-director` (identity), `costume-designer` (turnaround + wardrobe), `makeup-hair` (HMU states) — facets of one `char-{show}-{name}.md` asset.
+- Added creative craft `context/reference-craft-character.md` (casting/costume/makeup-hair artistry with real-master anchors) and technical guides `guide-character-consistency.md` + `guide-turnaround-sheets.md`.
+- Added the typed asset naming taxonomy to `guide-asset-reference.md` (`{type}-{show}-{name}.md`, `assets/{type}/{name}/`; codes char/prop/set/veh/cam/light/style/fx).
+- Wired into `skills/build.py` + `plugin/assemble.py`; docs updated to seven skills; sources added to `knowledge-base/Miscellaneous-Sources.md`.
+
 ## v0.5.1 - 2026-06-30
 
 ### New skill: image-edit (image-to-image) — closes the i2i coverage gap

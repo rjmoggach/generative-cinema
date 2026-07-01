@@ -1,6 +1,6 @@
 # generative-cinema
 
-**Version**: 0.5.1 · **Updated**: 2026-06-30
+**Version**: 0.6.0 · **Updated**: 2026-06-30
 
 A flexible plugin for getting **cinematic, model-optimized prompts** for generative
 image and video — at any level of structure. Ask for a great one-off still prompt,
@@ -64,6 +64,7 @@ skills' craft with a role's judgment.
 | `shot-prompt` | Shot | Six-layer, model-optimized prompts honoring the project look |
 | `footage-transform` | Shot (v2v) | Video-to-video prompts: preserve a real clip, change one thing (VFX, world swap, timed moves) |
 | `image-edit` | Shot (i2i) | Image-to-image prompts: preserve a real still, change one thing (recolor, world swap, add/age, relight, compose locked refs) |
+| `character-sheet` | Asset | Build a persistent character reference: hero identity, turnaround, wardrobe + HMU states |
 | `model-docs` | Library | Research + write/refresh a model doc; sync currency |
 
 ### Agents (the crew)
@@ -75,6 +76,9 @@ skills' craft with a role's judgment.
 | `first-ad` | 1st AD | "Break down this scene" — an ordered coverage shot list |
 | `script-supervisor` | Continuity | "Does this cut together?" — screen direction, eyelines, the line, look consistency |
 | `researcher` | Research | "Research model X" — isolated web research feeding `model-docs` |
+| `casting-director` | Art dept | "Lock a character's identity" — hero portrait, multi-angle bundle, locked descriptor block |
+| `costume-designer` | Art dept | "Build the turnaround / wardrobe continuity" — character model sheet + wardrobe states |
+| `makeup-hair` | Art dept | "Lock the HMU states" — clean/aged/wounded/wet state references per character |
 
 Typical flow: brief the **Director** → **1st AD** breaks down coverage → the **DP**
 hands back each shot's prompt → the **Script Supervisor** checks it cuts together.
@@ -116,7 +120,11 @@ Prompt translation / Watch-outs / Anchors) that turn the taxonomy into judgment:
 `guide-color-story`, `guide-creative-approaches`, `guide-ai-generation-strategy`.
 Editing / asset workflow: `guide-footage-transformation` (video-to-video),
 `guide-image-editing` (image-to-image), and `guide-asset-reference` (building reusable
-character/prop/location anchors — the spine of the v0.6+ art department).
+character/prop/location anchors; typed asset naming: `assets/{type}/{name}/`, codes
+`char`/`prop`/`set`/`veh`/`cam`/`light`/`style`/`fx`). Character pipeline:
+`guide-character-consistency` (hero ref, descriptor block, HMU/wardrobe state libraries),
+`guide-turnaround-sheets` (model-sheet views and alignment conventions), and
+`reference-craft-character` (casting/costume/makeup-hair artistry with real-master anchors).
 Foundations: `guide-prompting-framework` (the six-layer framework),
 `reference-film-grammar`, `reference-film-movements`, and the `reference-visual-*`
 style anchors (directors, cinematographers, commercial directors, photographers).
@@ -129,7 +137,7 @@ style anchors (directors, cinematographers, commercial directors, photographers)
 .claude-plugin/marketplace.json   This repo as a Claude Code marketplace → ./plugin
 plugin/                           The installable generative-cinema plugin (assembled)
   ├── .claude-plugin/plugin.json
-  ├── skills/   (6)   agents/ (5)   context/ (the bundled library)
+  ├── skills/   (7)   agents/ (8)   context/ (the bundled library)
   └── assemble.py                  Builds plugin/ from the repo-root sources
 context/                          Source of truth: model docs, craft guides, references
 skills/                           Source skill definitions (with bundled references/)

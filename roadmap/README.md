@@ -7,14 +7,13 @@ yet, so they can't ship half-finished. Flesh them out, then promote them.
 ## What's here
 
 ```
-agents/   production-designer · casting-director · costume-designer ·
-          makeup-hair · propmaster · location-scout   (6 agent stubs)
-skills/   art-direction · character-sheet ·
-          prop-turntable · location-pack              (4 skill stubs)
+agents/   production-designer · propmaster · location-scout   (3 agent stubs)
+skills/   art-direction · prop-turntable · location-pack      (3 skill stubs)
 ```
 
-> `image-edit` (Phase 0) has shipped — it was promoted to `skills/image-edit/` in
-> **v0.5.1**. The stub left here is just a pointer.
+> `image-edit` (Phase 0) shipped in **v0.5.1**; `character-sheet`, `casting-director`,
+> `costume-designer`, and `makeup-hair` (Phase 1) shipped in **v0.6.0** — all promoted
+> to their live locations.
 
 ## How to promote a stub into the live plugin
 
