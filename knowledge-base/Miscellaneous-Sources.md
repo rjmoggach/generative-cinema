@@ -61,3 +61,23 @@ wardrobe as character; sixteen designers on envisioning character through clothe
 film/TV/theatre makeup craft: naturalistic looks, aging, SFX, and continuity discipline.
 
 - https://www.amazon.com/Complete-Make-Up-Artist-Working-Television/dp/0810119692
+
+## Eric Hart, _The Prop Building Guidebook: For Theatre, Film, and TV_
+
+the props master's craft: fabrication, materials, multiples, state variants, continuity.
+
+- https://www.propbuildingguidebook.com/
+- https://www.routledge.com/The-Prop-Building-Guidebook-For-Theatre-Film-and-TV/Hart/p/book/9781032154619
+
+## Michael Rizzo, _The Art Direction Handbook for Film & Television_
+
+art-department setup, location scouting, executing the design, building scenery.
+
+- https://www.routledge.com/The-Art-Direction-Handbook-for-Film--Television/Rizzo/p/book/9780415842792
+
+## Jane Barnwell, _Production Design: Architects of the Screen_ (with Vincent LoBrutto, _The Filmmaker's Guide to Production Design_)
+
+the production designer's role; environment as storytelling; landmark screen designs.
+
+- https://cup.columbia.edu/book/production-design/9780231850131/
+- https://www.amazon.com/Filmmakers-Guide-Production-Design/dp/1581152248
