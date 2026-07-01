@@ -109,6 +109,34 @@ palette, material lexicon, and grade; every character/prop/location asset **inhe
 it so the world coheres. Construct asset prompts *from* the bible's fields, not loosely
 inspired by them. See `guide-art-direction.md`.
 
+## 9. Naming & storage (the asset taxonomy)
+
+- **Use when:** creating any asset spec or image so a human or a fresh agent can
+  read `assets/` and know what everything is.
+- **Because:** typed, coded, versioned names are self-describing and let new asset
+  types slot in without redesign.
+- **Prompt translation — the convention:**
+
+  **Type codes** (reserved; `char` is built first): `char` (character) - `prop` -
+  `set` (location/environment) - `veh` (vehicle) - `cam` - `light` - `style` - `fx`.
+
+  ```
+  Spec file     {type}-{show}-{name}.md          char-sbw-eli.md
+  Asset folder  assets/{type}/{name}/            assets/char/eli/   (type-first, so
+                                                  assets/char/ lists every character)
+  Image files   {type}-{name}-{facet}-{view}[-vNN].png
+    identity    char-eli-id-front.png   char-eli-id-3q-l.png
+    turnaround  char-eli-turn-front.png  -side-l / -side-r / -back / -3q-l / -3q-r
+    wardrobe    char-eli-fit-day1.png    char-eli-fit-day2-wet.png
+    hmu         char-eli-hmu-clean.png   char-eli-hmu-wound-01.png
+  ```
+
+  Facets: `id` - `turn` - `fit` - `hmu`. Views: `front/back/side-l/side-r/3q-l/3q-r`.
+  All lowercase kebab-case; `-vNN` version suffix optional.
+- **Watch-outs:** everything the model writes goes to the **user's working folder**,
+  never the plugin repo; keep names ASCII and kebab so paths stay portable.
+- **Anchors:** VFX/game asset-management naming (type-first hierarchy, versioned).
+
 ---
 
 ## Quick application
@@ -120,3 +148,5 @@ inspired by them. See `guide-art-direction.md`.
 4. Set the **reference-vs-LoRA** lock to the subject's screen life.
 5. **Compose** into shots by reference role; keep identity constant, scene variable.
 6. Hold the **light-key**; edit (don't regenerate) for progressions.
+7. Name and store per the **asset taxonomy** (§9): `{type}-{show}-{name}.md` +
+   `assets/{type}/{name}/`, in the user's working folder.
