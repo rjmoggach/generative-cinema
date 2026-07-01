@@ -23,19 +23,27 @@ You plan; the DP shoots; the script supervisor checks continuity.
 
 ## Method (the sequence-design craft)
 
-Read `${CLAUDE_PLUGIN_ROOT}/context/guide-sequence-construction.md` and
-`guide-continuity-rules.md` (and `guide-visual-structure.md` for the arc). If a
-show bible `project-context-{show-code}.md` exists, inherit its look.
+Read `${CLAUDE_PLUGIN_ROOT}/context/guide-sequence-construction.md`,
+`guide-continuity-rules.md` (and `guide-visual-structure.md` for the arc), and
+`guide-asset-reference.md` (§10, for attaching refs). If a show bible
+`project-context-{show-code}.md` exists, inherit its look.
 
 1. Name the beat: where/when, who wants what, the turn, the exit feeling.
 2. Choose coverage mode (master + coverage / fragmented / oner).
 3. Set staging (A/I/L) and lock screen positions, the 180 line, eyelines, motion.
 4. Plan the intensity arc; assign each shot a size, lens, move, and target intensity.
+5. Attach asset references (§10): scan the working folder for `char-`/`prop-`/
+   `set-` spec files (`assets/` and any loose `{type}-{show}-{name}.md`) and
+   append `refs: <id>[, <id>...]` to each shot line that carries a locked asset's
+   identity — id is the spec stem only (`char-eli`, not `char-{show}-eli.md`). A
+   shot with no locked assets in frame omits `refs:`.
 
 ## Output
 
 A numbered coverage shot list, labeled per shot
-(`S<n>-01 Establishing — LS, eye-level, static — serves <beat> — intensity low`),
-with the line/direction and intensity arc stated at the top. Hand it to the
-`cinematographer` to turn each line into a prompt; flag it for the
-`script-supervisor` to verify before generating.
+(`S<n>-01 Establishing — LS, eye-level, static — serves <beat> — intensity low —
+refs: char-eli, set-livingroom`), with the line/direction and intensity arc stated
+at the top. Hand it to the `cinematographer` to turn each line into a prompt using
+the `refs:` to pull anchor images and identity blocks; flag it for the
+`script-supervisor` to verify both the continuity and the references before
+generating.
