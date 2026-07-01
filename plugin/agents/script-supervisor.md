@@ -64,9 +64,10 @@ Report grouped by severity:
 
 - **Breaks** (will read as an error on screen): the issue, the shots involved, and
   the specific fix (e.g., "S2-03 has Eli looking screen-left; S2-02 established him
-  screen-right — flip the framing or the eyeline"; or "S3-11 refs:
-  prop-revolver-hero-aged but S3-10 established prop-revolver-hero clean — no
-  beat motivates the wear, revert the variant or add the motivating action").
+  screen-right — flip the framing or the eyeline"; or "S3-11 attaches the
+  `prop-revolver-hero-aged` variant of `refs: prop-revolver` but S3-10 established
+  the clean `-hero` variant — no beat motivates the wear, revert the variant or add
+  the motivating action").
 - **Risks** (likely drift, especially for AI generation): what to lock in the prompt.
 - **Clean**: confirm what already holds.
 
