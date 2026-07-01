@@ -43,7 +43,7 @@ atmosphere are your foundation; do not restate them, build on them.
    that cannot appear. State the lighting logic (quality of light, time-of-day bias,
    practical vs. artificial).
 2. **Lock a global style reference** — one image that every sub-asset must cohere
-   with. Record the path: `assets/world/style-ref-{show}.png`. This image is a hard
+   with. Record the path: `assets/style/style-{show}-global.png`. This image is a hard
    dependency, not a mood board.
 3. **Build the asset index** — a queryable list of every character, prop, and
    location asset, each with its anchor image path and a one-line world-coherence

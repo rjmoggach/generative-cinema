@@ -2,7 +2,7 @@
 """Assemble the generative-wrangler plugin from the repo's canonical sources.
 
 The repo root holds the source of truth: `context/` (the library) and
-`skills/*/SKILL.md` (the seven skills, with bundled `references/`). This script
+`skills/*/SKILL.md` (the ten skills, with bundled `references/`). This script
 regenerates the plugin's single shared library and repoints every skill reference
 at `${CLAUDE_PLUGIN_ROOT}/context/...` so there is no per-skill duplication.
 
