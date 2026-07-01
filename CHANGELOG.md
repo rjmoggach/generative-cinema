@@ -2,6 +2,16 @@
 
 All notable changes to the Generative AI Context Library will be documented in this file.
 
+## v0.8.0 - 2026-07-01
+
+### New: Production Designer / world bible (art department, Phase 3)
+
+- Added the `art-direction` skill - a PD interview that produces `art-bible-{show}.md`: the show's global palette (named + hex), material/CMF lexicon, era/genre, a global style reference, and an index of every character/prop/set asset. Inherits the look from `project-context`; written to the user's working folder.
+- Added the `production-designer` agent - the art-department counterpart to `director`: sets the world and delegates to casting, costume, makeup-hair, propmaster, and location-scout.
+- Added the technical guide `context/guide-art-direction.md` and expanded the Production Design creative section in `reference-craft-artdept.md` (anchored to Ken Adam, Hannah Beachler, Patrice Vermette, and peers).
+- Retrofitted the asset skills (`character-sheet`, `prop-turntable`, `location-pack`, `image-edit`) to inherit palette/CMF/style from `art-bible-{show}.md` when present.
+- Wired into `skills/build.py` + `plugin/assemble.py`; docs updated to ten skills / eleven agents; crew flow now runs director -> production-designer -> art-dept sub-roles; sources added to `knowledge-base/Miscellaneous-Sources.md`.
+
 ## v0.7.0 - 2026-07-01
 
 ### New: Props & Locations (art department, Phase 2)

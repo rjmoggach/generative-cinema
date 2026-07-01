@@ -1,6 +1,6 @@
 # generative-cinema
 
-**Version**: 0.7.0 · **Updated**: 2026-07-01
+**Version**: 0.8.0 · **Updated**: 2026-07-01
 
 A flexible plugin for getting **cinematic, model-optimized prompts** for generative
 image and video — at any level of structure. Ask for a great one-off still prompt,
@@ -60,6 +60,7 @@ skills' craft with a role's judgment.
 | Skill | Level | Does |
 |---|---|---|
 | `project-context` | Project | Visual-DNA interview → `project-context-{show-code}.md` |
+| `art-direction` | World bible / Project | PD interview → `art-bible-{show}.md`: palette, material/CMF, era, global style ref, asset index |
 | `sequence-design` | Scene | Plan coverage, staging, screen direction, intensity arc → shot list |
 | `shot-prompt` | Shot | Six-layer, model-optimized prompts honoring the project look |
 | `footage-transform` | Shot (v2v) | Video-to-video prompts: preserve a real clip, change one thing (VFX, world swap, timed moves) |
@@ -74,6 +75,7 @@ skills' craft with a role's judgment.
 | Agent | Role | You ask for |
 |---|---|---|
 | `director` | Director | Intent, approach, coverage calls, notes (you brief it as Creative Producer) |
+| `production-designer` | Art dept lead | "Set the world" — the art-bible interview, then delegates to casting/costume/makeup-hair/propmaster/location-scout |
 | `cinematographer` | DP | "Give me the next shot" / "a great prompt for this still" — a finished prompt |
 | `first-ad` | 1st AD | "Break down this scene" — an ordered coverage shot list |
 | `script-supervisor` | Continuity | "Does this cut together?" — screen direction, eyelines, the line, look consistency |
@@ -84,9 +86,12 @@ skills' craft with a role's judgment.
 | `propmaster` | Art dept | "Build the prop turntable" — hero anchor, multi-angle ring, detail and state variants |
 | `location-scout` | Art dept | "Build the location pack" — master plate, coverage, time/weather variants |
 
-Typical flow: brief the **Director** → **1st AD** breaks down coverage → the **DP**
-hands back each shot's prompt → the **Script Supervisor** checks it cuts together.
-Or skip straight to the **DP** for a single shot or one-off still.
+Typical flow: brief the **Director** → the **Production Designer** sets the world
+and delegates to the art-dept sub-roles (**casting director** → **costume
+designer** → **makeup & hair** → **propmaster** → **location scout**) → the **1st
+AD** breaks down coverage → the **DP** hands back each shot's prompt → the
+**Script Supervisor** checks it cuts together. Or skip straight to the **DP** for
+a single shot or one-off still.
 
 ---
 
@@ -133,7 +138,9 @@ Props & locations pipeline: `guide-prop-turntable` (object multi-view convention
 framing-the-asset rules), `guide-location-pack` (master-plate + coverage + variant
 conventions, continuity table), and `reference-craft-artdept` (props + locations/sets
 artistry with real-master anchors). Asset paths: `assets/prop/{name}/` (prop turntables)
-and `assets/set/{name}/` (location/set packs).
+and `assets/set/{name}/` (location/set packs). World bible: `guide-art-direction`
+(palette/CMF, era, top-down inheritance mechanics) governs the art-bible that every
+asset sheet inherits from.
 Foundations: `guide-prompting-framework` (the six-layer framework),
 `reference-film-grammar`, `reference-film-movements`, and the `reference-visual-*`
 style anchors (directors, cinematographers, commercial directors, photographers).
@@ -146,7 +153,7 @@ style anchors (directors, cinematographers, commercial directors, photographers)
 .claude-plugin/marketplace.json   This repo as a Claude Code marketplace → ./plugin
 plugin/                           The installable generative-cinema plugin (assembled)
   ├── .claude-plugin/plugin.json
-  ├── skills/   (9)   agents/ (10)   context/ (the bundled library)
+  ├── skills/   (10)   agents/ (11)   context/ (the bundled library)
   └── assemble.py                  Builds plugin/ from the repo-root sources
 context/                          Source of truth: model docs, craft guides, references
 skills/                           Source skill definitions (with bundled references/)

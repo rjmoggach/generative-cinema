@@ -268,11 +268,11 @@ Sequenced by dependency and ROI. Each phase is shippable on its own.
 - ✅ Asset naming: `assets/prop/{name}/` + `assets/set/{name}/`.
 - 3D-assist (Blender depth-pass) deferred — noted in guides; see §6 for approach.
 
-### Phase 3 — Production Designer / world bible
-- Agent: `production-designer`. Skill: `art-direction` → `art-bible-{show}.md`.
-- Guide: `guide-art-direction.md`.
-- Retrofit Phase 1–2 assets to inherit from the bible; add palette/CMF.
-- Update the `director` → `production-designer` handoff in the README crew flow.
+### Phase 3 - Production Designer / world bible ✅ *shipped in v0.8.0*
+- ✅ Agent: `production-designer`. Skill: `art-direction` → `art-bible-{show}.md`.
+- ✅ Guide: `guide-art-direction.md`.
+- ✅ Retrofit Phase 1–2 assets to inherit from the bible; add palette/CMF.
+- ✅ Update the `director` → `production-designer` handoff in the README crew flow.
 
 ### Phase 4 — Integration & QC
 - Teach `sequence-design` / `first-ad` to **attach the right asset references** to each
@@ -319,9 +319,10 @@ is ready. See [`roadmap/README.md`](roadmap/README.md).
 
 ## 9. Open questions
 
-1. **Art bible vs. project-context:** keep `art-bible-{show}.md` as a separate
-   PD-owned file (recommended — clean separation of *look* vs. *world*), or fold an
-   art-direction section into `project-context`? Decide before Phase 3.
+1. **Art bible vs. project-context:** ✅ Resolved — `art-bible-{show}.md` is kept as a
+   separate, PD-owned file (clean separation of *look*, owned by `project-context`/
+   `director`, vs. *world*, owned by `art-direction`/`production-designer`), rather than
+   folding an art-direction section into `project-context`. Shipped in v0.8.0.
 2. **LoRA training:** the consistency ceiling for recurring heroes needs LoRA, which is
    out of the current text-prompt scope. Do we (a) just *advise* it and record the
    trigger word in the character sheet, or (b) add a `lora-train` skill/runbook later?

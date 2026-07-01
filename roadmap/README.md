@@ -1,20 +1,26 @@
 # roadmap/ — staged stubs for the art-department expansion
 
-These are **skeleton drafts** for the new crew and workflow described in
-[`../ROADMAP.md`](../ROADMAP.md). They are deliberately **not wired into the build**
-yet, so they can't ship half-finished. Flesh them out, then promote them.
+These were **skeleton drafts** for the new crew and workflow described in
+[`../ROADMAP.md`](../ROADMAP.md), staged here so they could be fleshed out and
+promoted without shipping half-finished.
 
 ## What's here
 
-```
-agents/   production-designer                                  (1 agent stub)
-skills/   art-direction                                        (1 skill stub)
-```
+All Phase 1–3 stubs have shipped and been promoted to their live locations —
+`roadmap/agents/` and `roadmap/skills/` are now **empty** (no stub files remain).
 
 > `image-edit` (Phase 0) shipped in **v0.5.1**; `character-sheet`, `casting-director`,
 > `costume-designer`, and `makeup-hair` (Phase 1) shipped in **v0.6.0**; `prop-turntable`,
-> `location-pack`, `propmaster`, and `location-scout` (Phase 2) shipped in **v0.7.0** —
-> all promoted to their live locations.
+> `location-pack`, `propmaster`, and `location-scout` (Phase 2) shipped in **v0.7.0**;
+> `art-direction` and `production-designer` (Phase 3) shipped in **v0.8.0** — all
+> promoted to their live locations.
+
+The remaining roadmap work — **Phase 4: Integration & QC** (teaching
+`sequence-design`/`first-ad`/`shot-prompt` to attach and consume asset references,
+extending `script-supervisor` to audit asset continuity) — is **not staged as new
+stubs here**. It lands as edits to the existing skills and agents already shipped
+(`sequence-design`, `first-ad`, `shot-prompt`, `script-supervisor`), not as new
+crew or skills. See [`../ROADMAP.md`](../ROADMAP.md) §7 (Phase 4) for scope.
 
 ## How to promote a stub into the live plugin
 
@@ -32,7 +38,7 @@ skills/   art-direction                                        (1 skill stub)
    `skills/build.py`, and add its `MANIFEST` entry in `skills/build.py`.
 4. `python plugin/assemble.py` (validates), then `--package` for release.
 
-Build order follows the phases in `../ROADMAP.md`: `image-edit` first (Phase 0),
+Build order followed the phases in `../ROADMAP.md`: `image-edit` first (Phase 0),
 then the character pipeline, then props/locations, then the world bible.
 
 > Stubs marked `DRAFT — STUB` in the body. Remove that line when the file is real.

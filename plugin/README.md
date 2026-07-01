@@ -25,11 +25,12 @@ You are the **Creative Director**: you set the brief and approve. The crew does 
 No project context is required for a one-off — only load a show bible when you want
 every output locked to the same look.
 
-## Skills (nine)
+## Skills (ten)
 
 | Skill | Does | Produces |
 |---|---|---|
 | `project-context` | Visual-DNA interview (the look) | `project-context-{show-code}.md` |
+| `art-direction` | PD interview (the world): palette, material/CMF, era, global style ref, asset index | `art-bible-{show}.md` |
 | `sequence-design` | Plan coverage, staging, intensity arc | a numbered shot list |
 | `shot-prompt` | Six-layer, model-optimized prompts | copy-paste shot prompts |
 | `footage-transform` | Video-to-video: preserve a real clip, change one thing | copy-paste v2v prompts |
@@ -46,6 +47,7 @@ Crew personas that apply the skills' craft with a role's judgment and voice.
 | Agent | Role | What you ask for |
 |---|---|---|
 | `director` | Director | "Direct this scene", "your take", "director's notes" — intent, approach, coverage calls (you brief it as Creative Director) |
+| `production-designer` | Art dept lead | "Set the world" — the art-bible interview, then delegates to casting/costume/makeup-hair/propmaster/location-scout |
 | `cinematographer` | DP | "Give me the next shot", "a great prompt for this still" — hands back a finished, model-optimized prompt |
 | `first-ad` | 1st AD | "Break down this scene", "build a shot list" — an ordered coverage plan |
 | `script-supervisor` | Continuity | "Does this cut together?" — audits screen direction, eyelines, the line, look consistency |
@@ -56,9 +58,12 @@ Crew personas that apply the skills' craft with a role's judgment and voice.
 | `propmaster` | Art dept | "Build the prop turntable" — hero anchor, multi-angle ring, detail and state variants |
 | `location-scout` | Art dept | "Build the location pack" — master plate, coverage, time/weather variants |
 
-Typical flow: you brief the **Director** → the **1st AD** breaks down coverage →
-the **DP** hands back each shot's prompt → the **Script Supervisor** checks it cuts
-together. Or skip straight to the **DP** for a single shot or one-off still.
+Typical flow: you brief the **Director** → the **Production Designer** sets the
+world and delegates to the art-dept sub-roles (**casting director** → **costume
+designer** → **makeup & hair** → **propmaster** → **location scout**) → the **1st
+AD** breaks down coverage → the **DP** hands back each shot's prompt → the
+**Script Supervisor** checks it cuts together. Or skip straight to the **DP** for
+a single shot or one-off still.
 
 ## Shared library (`context/`)
 
