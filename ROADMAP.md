@@ -1,5 +1,7 @@
 # generative-wrangler — ROADMAP
 
+**The art-department roadmap (Phases 0-4) is complete** — shipped through v0.9.0.
+
 **Status:** Draft 1 · **Created:** 2026-06-30 · **Owner:** Rob (Creative Producer)
 
 This roadmap plans the next major expansion of the plugin: an **art department** —
@@ -274,14 +276,14 @@ Sequenced by dependency and ROI. Each phase is shippable on its own.
 - ✅ Retrofit Phase 1–2 assets to inherit from the bible; add palette/CMF.
 - ✅ Update the `director` → `production-designer` handoff in the README crew flow.
 
-### Phase 4 — Integration & QC
-- Teach `sequence-design` / `first-ad` to **attach the right asset references** to each
-  shot line, and `shot-prompt` / `cinematographer` to consume them (identity =
+### Phase 4 - Integration & QC ✅ *shipped in v0.9.0*
+- ✅ Taught `sequence-design` / `first-ad` to **attach the right asset references** to
+  each shot line, and `shot-prompt` / `cinematographer` to consume them (identity =
   reference, change = prompt).
-- Extend `script-supervisor` to audit **asset continuity** (wrong/missing reference,
+- ✅ Extended `script-supervisor` to audit **asset continuity** (wrong/missing reference,
   costume/HMU/prop state drift, location geometry mismatch).
-- Update `model-currency` notes with per-model reference-count/strength caveats.
-- Docs: new `docs/05-asset-pipeline.md`; refresh README crew/skill tables.
+- ✅ Updated `model-currency` notes with per-model reference-count/strength caveats.
+- ✅ Docs: new `docs/05-asset-pipeline.md`; refreshed README crew/skill tables.
 
 ---
 

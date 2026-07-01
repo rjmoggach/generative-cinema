@@ -31,8 +31,8 @@ every output locked to the same look.
 |---|---|---|
 | `project-context` | Visual-DNA interview (the look) | `project-context-{show-code}.md` |
 | `art-direction` | PD interview (the world): palette, material/CMF, era, global style ref, asset index | `art-bible-{show}.md` |
-| `sequence-design` | Plan coverage, staging, intensity arc | a numbered shot list |
-| `shot-prompt` | Six-layer, model-optimized prompts | copy-paste shot prompts |
+| `sequence-design` | Plan coverage, staging, intensity arc; attaches asset `refs:` to each shot line | a numbered shot list |
+| `shot-prompt` | Six-layer, model-optimized prompts; consumes attached `refs:` (identity = reference, change = prompt) | copy-paste shot prompts |
 | `footage-transform` | Video-to-video: preserve a real clip, change one thing | copy-paste v2v prompts |
 | `image-edit` | Image-to-image: preserve a real still, change one thing | copy-paste i2i prompts |
 | `character-sheet` | Build a persistent character reference: hero identity, turnaround, wardrobe + HMU states | `char-{show}-{name}.md` + `assets/char/{name}/` |
@@ -48,9 +48,9 @@ Crew personas that apply the skills' craft with a role's judgment and voice.
 |---|---|---|
 | `director` | Director | "Direct this scene", "your take", "director's notes" — intent, approach, coverage calls (you brief it as Creative Director) |
 | `production-designer` | Art dept lead | "Set the world" — the art-bible interview, then delegates to casting/costume/makeup-hair/propmaster/location-scout |
-| `cinematographer` | DP | "Give me the next shot", "a great prompt for this still" — hands back a finished, model-optimized prompt |
-| `first-ad` | 1st AD | "Break down this scene", "build a shot list" — an ordered coverage plan |
-| `script-supervisor` | Continuity | "Does this cut together?" — audits screen direction, eyelines, the line, look consistency |
+| `cinematographer` | DP | "Give me the next shot", "a great prompt for this still" — hands back a finished, model-optimized prompt; consumes attached asset `refs:` (identity = reference) |
+| `first-ad` | 1st AD | "Break down this scene", "build a shot list" — an ordered coverage plan with asset `refs:` attached to each line |
+| `script-supervisor` | Continuity | "Does this cut together?" — audits screen direction, eyelines, the line, look consistency, and asset continuity (missing/wrong reference, costume/HMU/prop state drift, location geometry) |
 | `researcher` | Research | "Research model X" — isolated web research feeding `model-docs` |
 | `casting-director` | Art dept | "Lock a character's identity" — hero portrait, multi-angle bundle, locked descriptor block |
 | `costume-designer` | Art dept | "Build the turnaround / wardrobe continuity" — character model sheet + wardrobe states |
@@ -60,10 +60,14 @@ Crew personas that apply the skills' craft with a role's judgment and voice.
 
 Typical flow: you brief the **Director** → the **Production Designer** sets the
 world and delegates to the art-dept sub-roles (**casting director** → **costume
-designer** → **makeup & hair** → **propmaster** → **location scout**) → the **1st
-AD** breaks down coverage → the **DP** hands back each shot's prompt → the
-**Script Supervisor** checks it cuts together. Or skip straight to the **DP** for
-a single shot or one-off still.
+designer** → **makeup & hair** → **propmaster** → **location scout**), each
+producing a locked asset (`char-`/`prop-`/`set-{show}-{name}.md`) → the **1st
+AD** breaks down coverage and **attaches** the relevant asset `refs:` to each
+shot line → the **DP** **consumes** those refs — identity from the reference,
+change from the prompt — and hands back each shot's prompt → the **Script
+Supervisor** checks it cuts together, now also auditing asset continuity. Or
+skip straight to the **DP** for a single shot or one-off still. See the
+integrated pipeline walkthrough in `docs/05-asset-pipeline.md` (repo root).
 
 ## Shared library (`context/`)
 

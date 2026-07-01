@@ -1,6 +1,6 @@
 # generative-wrangler
 
-**Version**: 0.8.0 · **Updated**: 2026-07-01
+**Version**: 0.9.0 · **Updated**: 2026-07-01
 
 A flexible plugin for getting **cinematic, model-optimized prompts** for generative
 image and video — at any level of structure. Ask for a great one-off still prompt,
@@ -61,8 +61,8 @@ skills' craft with a role's judgment.
 |---|---|---|
 | `project-context` | Project | Visual-DNA interview → `project-context-{show-code}.md` |
 | `art-direction` | World bible / Project | PD interview → `art-bible-{show}.md`: palette, material/CMF, era, global style ref, asset index |
-| `sequence-design` | Scene | Plan coverage, staging, screen direction, intensity arc → shot list |
-| `shot-prompt` | Shot | Six-layer, model-optimized prompts honoring the project look |
+| `sequence-design` | Scene | Plan coverage, staging, screen direction, intensity arc → shot list; attaches asset `refs:` to each shot line |
+| `shot-prompt` | Shot | Six-layer, model-optimized prompts honoring the project look; consumes attached `refs:` (identity = reference, change = prompt) |
 | `footage-transform` | Shot (v2v) | Video-to-video prompts: preserve a real clip, change one thing (VFX, world swap, timed moves) |
 | `image-edit` | Shot (i2i) | Image-to-image prompts: preserve a real still, change one thing (recolor, world swap, add/age, relight, compose locked refs) |
 | `character-sheet` | Asset | Build a persistent character reference: hero identity, turnaround, wardrobe + HMU states |
@@ -76,9 +76,9 @@ skills' craft with a role's judgment.
 |---|---|---|
 | `director` | Director | Intent, approach, coverage calls, notes (you brief it as Creative Producer) |
 | `production-designer` | Art dept lead | "Set the world" — the art-bible interview, then delegates to casting/costume/makeup-hair/propmaster/location-scout |
-| `cinematographer` | DP | "Give me the next shot" / "a great prompt for this still" — a finished prompt |
-| `first-ad` | 1st AD | "Break down this scene" — an ordered coverage shot list |
-| `script-supervisor` | Continuity | "Does this cut together?" — screen direction, eyelines, the line, look consistency |
+| `cinematographer` | DP | "Give me the next shot" / "a great prompt for this still" — a finished prompt; consumes attached asset `refs:` (identity = reference) |
+| `first-ad` | 1st AD | "Break down this scene" — an ordered coverage shot list, with asset `refs:` attached to each line |
+| `script-supervisor` | Continuity | "Does this cut together?" — screen direction, eyelines, the line, look consistency, and asset continuity (missing/wrong reference, costume/HMU/prop state drift, location geometry) |
 | `researcher` | Research | "Research model X" — isolated web research feeding `model-docs` |
 | `casting-director` | Art dept | "Lock a character's identity" — hero portrait, multi-angle bundle, locked descriptor block |
 | `costume-designer` | Art dept | "Build the turnaround / wardrobe continuity" — character model sheet + wardrobe states |
@@ -88,10 +88,17 @@ skills' craft with a role's judgment.
 
 Typical flow: brief the **Director** → the **Production Designer** sets the world
 and delegates to the art-dept sub-roles (**casting director** → **costume
-designer** → **makeup & hair** → **propmaster** → **location scout**) → the **1st
-AD** breaks down coverage → the **DP** hands back each shot's prompt → the
-**Script Supervisor** checks it cuts together. Or skip straight to the **DP** for
-a single shot or one-off still.
+designer** → **makeup & hair** → **propmaster** → **location scout**), each
+producing a locked asset (`char-`/`prop-`/`set-{show}-{name}.md`) → the **1st
+AD** breaks down coverage and **attaches** the relevant asset `refs:` to each
+shot line → the **DP** **consumes** those refs — loading each anchor image and
+restating its identity block verbatim (identity = reference, change = prompt) —
+and hands back each shot's prompt → the **Script Supervisor** checks it cuts
+together, now also **auditing asset continuity** (missing/wrong reference,
+costume/HMU/prop state drift, location geometry mismatch). Or skip straight to
+the **DP** for a single shot or one-off still. See
+[`docs/05-asset-pipeline.md`](docs/05-asset-pipeline.md) for the full attach →
+consume → audit walkthrough.
 
 ---
 

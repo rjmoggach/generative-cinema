@@ -2,6 +2,16 @@
 
 All notable changes to the Generative AI Context Library will be documented in this file.
 
+## v0.9.0 - 2026-07-01
+
+### New: Asset integration & QC (art department, Phase 4 - roadmap complete)
+
+- Added the `refs:` attachment notation (`context/guide-asset-reference.md` §10): each shot line names its assets by spec-stem (`char-{name}`, `prop-{name}`, `set-{name}`).
+- `sequence-design` + `first-ad` now attach `refs:` to each shot line; `shot-prompt` + `cinematographer` consume them - loading each asset's anchor image and restating its identity block verbatim (identity = reference, change = prompt), inheriting the art-bible palette/CMF.
+- `script-supervisor` now audits asset continuity: missing/wrong reference, costume/HMU/prop state drift, and location geometry mismatch, alongside its screen-direction/eyeline checks.
+- Added per-model reference-count/strength caveats to `model-currency-2026-06.md` and a new end-to-end guide `docs/05-asset-pipeline.md`.
+- Also in this release: the `model-image-luma-uni-1.md` doc (Luma Uni-1 unified image model). Sources: Pat P. Miller, Script Supervising and Film Continuity.
+
 ## v0.8.0 - 2026-07-01
 
 ### New: Production Designer / world bible (art department, Phase 3)
